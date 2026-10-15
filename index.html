@@ -113,6 +113,50 @@ body{background:radial-gradient(ellipse at 80% 0%,#35502b 0,transparent 38%),rad
 #photo{padding:10px}
 @media(max-width:520px){.row{grid-template-columns:1fr 1fr;gap:9px}.time-picker{gap:5px;padding:6px}.time-picker select{font-size:19px;min-height:44px}.card{padding:15px}.stats .stat{min-height:95px}}
 @media(max-width:390px){.row{grid-template-columns:1fr}}
+
+/* Refined balance: calm stone surfaces with restrained moss accents */
+:root{--bg:#e9e9df;--card:#f8f7f1;--ink:#262b22;--muted:#777b6e;--green:#3d4d32;--green2:#596b48;--line:#d9d9cc;--gold:#b89b60}
+body{background:radial-gradient(ellipse at 90% 0%,#e0e4d5 0,transparent 35%),#e9e9df;color:#292e25}
+.top{background:linear-gradient(115deg,#293327 0%,#3d4a35 72%,#59644b 100%);box-shadow:0 10px 26px #2731251a}
+.notice{background:#f4f0e3;border-color:#e2d8bc;border-right-color:#b79c61;color:#55513f}
+.card,.stat{background:#f9f8f2;border-color:#dedfd3;color:#292e25;box-shadow:0 8px 24px #252c1e0b}
+.card h2,.reporthead strong{color:#343e2e}
+.card h2:before{background:linear-gradient(#bda66e,#758466)}
+.stat{background:linear-gradient(140deg,#fbfaf5,#efefe6);border-color:#dedfd2}
+.stat strong{color:#3e5034}.stat span,.field label,.muted,.section-kicker{color:#74796a}
+.field input,.field textarea,.field select{background:#f0f0e8;border-color:#d8dacd;color:#292e25}
+.field input:focus,.field textarea:focus,.field select:focus{background:#fff;border-color:#8a9a78;box-shadow:0 0 0 3px #73866318}
+.btn{background:linear-gradient(135deg,#46563a,#34442e);border-color:#596b4c;box-shadow:0 4px 10px #29392312}
+.btn:hover{background:linear-gradient(135deg,#596b48,#43563a)}
+.btn.secondary{background:#e9e9df;border-color:#d5d8c9;color:#46533d;box-shadow:none}
+.btn.secondary:hover{background:#dfe2d4}
+.btn.danger{background:#f5e9e5;border-color:#e7d0c9;color:#91483d}
+.pill{background:#e7e8dc;border-color:#d9ddcc;color:#4b5940}
+.report{background:#f7f7f0;border-color:#dedfd3;box-shadow:0 4px 13px #252c1e08}
+.report:hover{border-color:#aeb99f}
+.empty{background:#f0f1e9;border-color:#d3d8c8;color:#747b69}
+.foot{color:#818675}
+.datebar input{background:#f5f4ec!important;color:#3d4d32!important;border-color:#aeb99e!important}
+.calendar{background:#f8f7f0;border-color:#d4d8c8}
+.calendar-head strong{color:#3d4d32}.calendar-weekdays{color:#737c68}
+.calendar-days button{background:#eceee5;color:#3d4934}
+.calendar-days button:hover{background:#dfe5d5;border-color:#bdc9ae}
+.calendar-days button.today{background:#e8eadc;border-color:#9baa86}
+.calendar-days button.selected{background:linear-gradient(135deg,#596b48,#3f5134);color:#fff}
+.calendar-foot .muted{color:#737b68}
+#workerName{background:#f0f0e8}
+.time-picker{position:relative;gap:9px;min-height:78px;padding:10px 12px;border:1px solid #d8d9cc;border-radius:17px;background:linear-gradient(145deg,#fbfaf5,#eeefe6);box-shadow:0 5px 14px #2731250a;transition:border-color .18s,box-shadow .18s}
+.time-picker:focus-within{border-color:#9aa889;box-shadow:0 0 0 4px #7d91651a,0 6px 16px #2731250b}
+.time-picker .time-icon{display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;border-radius:13px;background:#e1e5d8;color:#4c6040;font-size:23px;box-shadow:inset 0 0 0 1px #d2d9c7}
+.time-picker[data-time="clockIn"] .time-icon{background:#e5e9dd;color:#4e6542}
+.time-picker[data-time="clockOut"] .time-icon{background:#eee7d8;color:#8a7549}
+.time-picker select{appearance:none;-webkit-appearance:none;flex:1;min-width:0;text-align:center;text-align-last:center;font-size:22px;font-weight:700;color:#35452d;background:#fff;border:1px solid #e0e1d6;border-radius:11px;padding:10px 2px;min-height:49px;outline:none;box-shadow:0 2px 5px #28312008}
+.time-picker select:focus{border-color:#9baa89;background:#fff}
+.time-picker b{color:#8d927e;font-size:22px}
+.field:has(.time-picker){margin-bottom:18px}
+.field:has(.time-picker)>label{font-size:13px;color:#4b5543}
+@media(max-width:520px){.time-picker{min-height:72px;padding:8px;gap:6px}.time-picker .time-icon{flex-basis:33px;width:33px;height:33px;font-size:20px}.time-picker select{font-size:19px;min-height:45px}.card{background:#f8f7f1}}
+
 </style>
 </head>
 <body>
@@ -195,7 +239,7 @@ function saveReport(){
  $('saveMessage').textContent='گزارش '+jalali(date)+' ذخیره شد و روی همین مرورگر می‌ماند.';clearForm(false);renderAll();loadDateReport();
 }
 function renderReports(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim();let rows=getReports().filter(r=>!name||r.ownerName===name).sort((a,b)=>b.date.localeCompare(a.date));$('reportsList').innerHTML=rows.length?rows.map(r=>'<div class="report"><div class="reporthead"><strong>'+safe(jalali(r.date))+'</strong><span class="pill">'+safe(r.ownerName)+'</span></div>'+(r.projectName?'<div class="muted" style="margin-top:8px">پروژه: '+safe(r.projectName)+'</div>':'')+'<p>'+(r.clockIn||r.clockOut?'ورود: '+safe(r.clockIn||'—')+' | خروج: '+safe(r.clockOut||'—')+'<br>ساعت کار: '+faNum(r.hours)+' ساعت<br>':'')+'واریزی: '+moneyFmt(r.money)+'</p>'+(r.description?'<p>'+safe(r.description)+'</p>':'')+(r.photo?'<img class="photo" src="'+r.photo+'" alt="عکس گزارش">':'')+'<div class="actions" style="margin-top:10px"><button class="btn secondary" onclick="editReport(\''+r.id+'\')">ویرایش</button><button class="btn danger" onclick="deleteReport(\''+r.id+'\')">حذف</button></div></div>').join(''):'<div class="empty">هنوز گزارشی برای نمایش وجود ندارد.</div>'}
-function editReport(id){const r=getReports().find(x=>x.id===id);if(!r)return;setJalaliInput('reportDate',r.date);updateDateLabel();editingId=r.id;$('clockIn').value=r.clockIn||'';$('clockOut').value=r.clockOut||'';$('money').value=r.money||'';$('projectName').value=r.projectName||'';$('description').value=r.description||'';photoData=r.photo||'';$('photo').value='';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}else{$('photoPreview').classList.add('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+function editReport(id){const r=getReports().find(x=>x.id===id);if(!r)return;setJalaliInput('reportDate',r.date);updateDateLabel();editingId=r.id;setTimePicker('clockIn',r.clockIn||'');setTimePicker('clockOut',r.clockOut||'');$('money').value=r.money||'';$('projectName').value=r.projectName||'';$('description').value=r.description||'';photoData=r.photo||'';$('photo').value='';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}else{$('photoPreview').classList.add('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
 function deleteReport(id){if(!confirm('این گزارش حذف شود؟'))return;try{setReports(getReports().filter(r=>r.id!==id));renderAll();loadDateReport()}catch(e){alert('حذف گزارش انجام نشد. دوباره تلاش کن.')}}
 function renderAll(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim(),rows=getReports().filter(r=>!name||r.ownerName===name),hours=rows.reduce((s,r)=>s+(Number(r.hours)||0),0),money=rows.reduce((s,r)=>s+(Number(r.money)||0),0);$('totalHours').textContent=faNum(Math.round(hours*100)/100)+' ساعت';$('totalMoney').textContent=moneyFmt(money);$('totalReports').textContent=faNum(rows.length);renderReports()}
 function exportBackup(){const data={app:'FGC-local-backup',version:2,exportedAt:new Date().toISOString(),ownerName:localStorage.getItem(nameKey)||'',reports:getReports()};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='FGC-backup-'+todayISO()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
