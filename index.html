@@ -69,6 +69,50 @@ body{background:radial-gradient(ellipse at 90% 8%,#d8e4c8 0,transparent 32%),rad
 .stats .stat:nth-child(3){border-top:3px solid #9aaf85}
 #saveBtn{min-width:150px}
 @media(max-width:520px){.datebar{grid-template-columns:1fr 1.35fr;gap:7px}.datebar input{grid-column:1/-1;grid-row:1;font-size:18px}.datebar #prevDay{grid-column:1;grid-row:2}.datebar #nextDay{grid-column:2;grid-row:2}.datebar #openCalendar{grid-column:1/-1;grid-row:3}.calendar{padding:11px}.calendar-days{gap:3px}.calendar-days button{min-height:37px}.filter-date-row{flex-direction:column}}
+
+/* FGC deep moss app skin */
+:root{--bg:#172317;--card:#243522;--ink:#f0f4e9;--muted:#b2c3a4;--green:#37562b;--green2:#52783e;--line:#3d5735;--gold:#d4bb7a}
+body{background:radial-gradient(ellipse at 80% 0%,#35502b 0,transparent 38%),radial-gradient(ellipse at 0% 55%,#263c25 0,transparent 38%),#172317;color:#edf4e5}
+.wrap{max-width:980px}
+.notice{background:linear-gradient(120deg,#304a29,#263c25);border-color:#506d41;border-right-color:#d0b477;color:#e3edda}
+.card,.stat{background:linear-gradient(145deg,#293d27,#223321);border-color:#3c5734;box-shadow:0 12px 30px #0710074a;color:#eff5e9}
+.card h2,.reporthead strong{color:#e4efd8}
+.card h2:before{background:linear-gradient(#d7c184,#759c5a)}
+.stat{background:linear-gradient(135deg,#304a2a,#223421);border-color:#4a6540}
+.stat span,.field label,.muted,.section-kicker{color:#b7c9a8}
+.stat strong{color:#e0d19d}
+.field input,.field textarea,.field select{background:#1b2b1b;border-color:#4a6540;color:#f1f5e9}
+.field input::placeholder,.field textarea::placeholder{color:#819578}
+.field input:focus,.field textarea:focus,.field select:focus{background:#203321;border-color:#9dbb7e;box-shadow:0 0 0 4px #9bbd751f}
+.btn{background:linear-gradient(135deg,#54783c,#36562a);color:#fff;border:1px solid #64864c}
+.btn:hover{background:linear-gradient(135deg,#668b4a,#42672f)}
+.btn.secondary{background:#30472a;border-color:#526d42;color:#e1edcf}
+.btn.secondary:hover{background:#3c5831}
+.btn.danger{background:#542f2a;border-color:#815048;color:#ffd9d3}
+.pill{background:#3b5530;border-color:#536f43;color:#e3edcf}
+.report{background:linear-gradient(145deg,#2b4028,#223421);border-color:#425e38;box-shadow:0 5px 16px #0b170a50}
+.report:hover{border-color:#7d9e64}
+.empty{background:#1d2e1d;border-color:#526d42;color:#b4c5a6}
+.photo{border:2px solid #587548}
+.foot{color:#9caf8d}
+.layout{display:contents}
+.reports-card{margin-top:0}
+.time-picker{display:flex;align-items:center;gap:8px;min-height:58px;padding:7px 10px;border:1px solid #587447;border-radius:15px;background:linear-gradient(135deg,#30492a,#1b2c1b);box-shadow:inset 0 1px #ffffff0a}
+.time-picker .time-icon{font-size:22px;color:#d5c080}
+.time-picker select{appearance:none;-webkit-appearance:none;flex:1;min-width:0;text-align:center;text-align-last:center;font-size:21px;font-weight:700;color:#e6d59a;background:#223621;border:1px solid #4c6840;border-radius:10px;padding:9px 3px;outline:none}
+.time-picker b{color:#d6c182;font-size:22px}
+.datebar input{background:#1c2c1b!important;color:#f1dfab!important;border-color:#72935d!important}
+.calendar{background:linear-gradient(145deg,#2c4329,#1d2f1d);border-color:#526e43}
+.calendar-head strong{color:#e7eddb}.calendar-weekdays{color:#b5c8a6}
+.calendar-days button{background:#354d2e;color:#e5efd9}
+.calendar-days button:hover{background:#49683b;border-color:#73985b}
+.calendar-days button.today{background:#425f34;border-color:#b6c98a}
+.calendar-days button.selected{background:linear-gradient(135deg,#a6bd78,#52773b);color:#142111}
+.calendar-foot .muted{color:#b4c7a4}
+#workerName{background:#1b2b1b}
+#photo{padding:10px}
+@media(max-width:520px){.row{grid-template-columns:1fr 1fr;gap:9px}.time-picker{gap:5px;padding:6px}.time-picker select{font-size:19px;min-height:44px}.card{padding:15px}.stats .stat{min-height:95px}}
+@media(max-width:390px){.row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -80,13 +124,13 @@ body{background:radial-gradient(ellipse at 90% 8%,#d8e4c8 0,transparent 32%),rad
 <div class="stats"><div class="stat"><span>مجموع ساعت کار ثبت‌شده</span><strong id="totalHours">۰ ساعت</strong></div><div class="stat"><span>مجموع واریزی‌ها</span><strong id="totalMoney">۰ تومان</strong></div><div class="stat"><span>تعداد گزارش‌ها</span><strong id="totalReports">۰</strong></div></div>
 <div class="layout"><section class="card"><h2 id="formTitle">ثبت گزارش روزانه</h2>
 <div class="field"><label>تاریخ گزارش</label><div class="datebar"><button class="btn secondary" id="prevDay" type="button" aria-label="روز قبل">‹ روز قبل</button><input type="text" id="reportDate" inputmode="numeric" placeholder="۱۴۰۵/۰۷/۲۳" aria-label="تاریخ شمسی" autocomplete="off"><button class="btn secondary" id="openCalendar" type="button">📅 تقویم</button><button class="btn secondary" id="nextDay" type="button" aria-label="روز بعد">روز بعد ›</button></div><div class="calendar hidden" id="calendarPanel"><div class="calendar-head"><button class="btn secondary" id="calPrev" type="button" aria-label="ماه قبل">‹</button><strong id="calTitle">تقویم شمسی</strong><button class="btn secondary" id="calNext" type="button" aria-label="ماه بعد">›</button></div><div class="calendar-weekdays"><span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span></div><div class="calendar-days" id="calendarDays"></div><div class="calendar-foot"><button class="btn secondary" id="calToday" type="button">رفتن به امروز</button><span class="muted">تاریخ شمسی</span></div></div><div class="muted date-hint" id="jalaliDate">تاریخ امروز به‌صورت خودکار انتخاب می‌شود</div></div>
-<div class="row"><div class="field"><label>ساعت ورود</label><input id="clockIn" type="time"></div><div class="field"><label>ساعت خروج</label><input id="clockOut" type="time"></div></div>
+<div class="row"><div class="field"><label>ساعت ورود</label><div class="time-picker" data-time="clockIn"><span class="time-icon">◷</span><select id="clockInHour" aria-label="ساعت ورود"></select><b>:</b><select id="clockInMinute" aria-label="دقیقه ورود"></select></div><input id="clockIn" type="hidden"></div><div class="field"><label>ساعت خروج</label><div class="time-picker" data-time="clockOut"><span class="time-icon">◴</span><select id="clockOutHour" aria-label="ساعت خروج"></select><b>:</b><select id="clockOutMinute" aria-label="دقیقه خروج"></select></div><input id="clockOut" type="hidden"></div></div>
 <div class="field"><label>واریزی دریافتی (تومان)</label><input id="money" type="number" min="0" inputmode="numeric" placeholder="مثلاً ۵۰۰۰۰۰"></div>
 <div class="field"><label>نام پروژه</label><input id="projectName" type="text" maxlength="120" placeholder="مثلاً پروژه شرافت، ساختمان احمدی..."></div>
 <div class="field"><label>شرح کار و توضیحات</label><textarea id="description" placeholder="کارهای انجام‌شده، محل پروژه و نکات لازم..."></textarea></div>
 <div class="field"><label>عکس گزارش (اختیاری)</label><input id="photo" type="file" accept="image/*"><div class="muted">عکس‌ها کوچک‌سازی می‌شوند تا فضای کمتری اشغال کنند.</div><img id="photoPreview" class="photo hidden" alt="پیش‌نمایش عکس"></div>
 <div class="actions"><button id="saveBtn" class="btn">ذخیره گزارش</button><button id="cancelEdit" class="btn secondary hidden">لغو ویرایش</button><button id="clearForm" class="btn secondary">پاک کردن فرم</button></div><p id="saveMessage" class="muted"></p></section>
-<aside class="card"><h2>گزارش‌های من</h2><p class="section-kicker">گزارش‌ها را بر اساس پروژه یا تاریخ پیدا کن</p><div class="field"><label>جست‌وجو بر اساس نام پروژه</label><input id="searchProject" type="search" placeholder="نام پروژه را بنویس..." autocomplete="off"></div><div class="field"><label>فیلتر تاریخ شمسی (اختیاری)</label><div class="filter-date-row"><input type="text" id="filterDate" inputmode="numeric" placeholder="۱۴۰۵/۰۷/۲۳" aria-label="فیلتر تاریخ شمسی" autocomplete="off"><button class="btn secondary" id="clearFilterDate" type="button">پاک‌کردن</button></div></div><div id="reportsList"></div></aside></div>
+<aside class="card reports-card"><h2>گزارش‌های من</h2><p class="section-kicker">همه گزارش‌های ذخیره‌شده روی همین دستگاه</p><div id="reportsList"></div></aside></div>
 <div class="card"><h2>نسخه پشتیبان اطلاعات این دستگاه</h2><p class="muted">برای نگهداری گزارش‌ها، نسخه پشتیبان بگیر. فایل پشتیبان را در جای امن نگه دار؛ بازیابی آن اطلاعات فعلی این مرورگر را جایگزین می‌کند.</p><div class="actions"><button id="exportBtn" class="btn secondary">دانلود نسخه پشتیبان</button><label class="btn secondary" for="importFile">بازیابی نسخه پشتیبان</label><input id="importFile" type="file" accept="application/json,.json" class="hidden"></div></div>
 </section><div class="foot">FGC • سامانه ثبت گزارش روزانه</div></main>
 <script>
@@ -110,20 +154,20 @@ function setReports(a){localStorage.setItem(storeKey,JSON.stringify(a))}
 function calcHours(a,b){if(!a||!b)return 0;let [ah,am]=a.split(':').map(Number),[bh,bm]=b.split(':').map(Number);let mins=bh*60+bm-(ah*60+am);if(mins<0)mins+=1440;return Math.round(mins/60*100)/100}
 function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function init(){
- const today=todayISO();setJalaliInput('reportDate',today);$('filterDate').value='';$('workerName').value=localStorage.getItem(nameKey)||'';updateDateLabel();
+ const today=todayISO();setJalaliInput('reportDate',today);$('workerName').value=localStorage.getItem(nameKey)||'';initTimePickers();updateDateLabel();
  $('reportDate').addEventListener('change',()=>{const iso=readJalaliInput('reportDate',true);if(!iso){$('saveMessage').textContent='تاریخ شمسی معتبر وارد کن؛ نمونه: ۱۴۰۵/۰۷/۲۳';updateDateLabel();return}updateDateLabel();loadDateReport()});
- $('filterDate').addEventListener('change',()=>{const iso=readJalaliInput('filterDate');if($('filterDate').value.trim()&&!iso){$('filterDate').reportValidity();return}renderReports()});
  $('prevDay').onclick=()=>shiftDate(-1);$('nextDay').onclick=()=>shiftDate(1);
  $('openCalendar').onclick=()=>{const iso=readJalaliInput('reportDate')||todayISO(),p=jalaliParts(iso);calendarYear=p.year;calendarMonth=p.month;$('calendarPanel').classList.toggle('hidden');renderCalendar()};
  $('calPrev').onclick=()=>moveCalendar(-1);$('calNext').onclick=()=>moveCalendar(1);$('calToday').onclick=()=>chooseDate(todayISO());
- $('clearFilterDate').onclick=()=>{$('filterDate').value='';$('filterDate').dataset.iso='';$('filterDate').setCustomValidity('');renderReports()};
  $('saveBtn').onclick=saveReport;$('clearForm').onclick=clearForm;
  $('cancelEdit').onclick=()=>{clearForm();$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden')};
- $('searchProject').oninput=renderReports;$('photo').onchange=handlePhoto;
+$('photo').onchange=handlePhoto;
  $('saveNameBtn').onclick=()=>{const n=$('workerName').value.trim();if(!n){$('nameMessage').textContent='لطفاً نام خود را وارد کنید.';return}localStorage.setItem(nameKey,n);$('nameMessage').textContent='نام شما روی همین دستگاه ذخیره شد.';renderAll();loadDateReport()};
  $('exportBtn').onclick=exportBackup;$('importFile').onchange=importBackup;
  renderAll();loadDateReport();
 }
+function initTimePickers(){['clockIn','clockOut'].forEach(id=>{const h=$(id+'Hour'),m=$(id+'Minute');h.innerHTML='<option value="">ساعت</option>'+Array.from({length:24},(_,i)=>'<option value="'+String(i).padStart(2,'0')+'">'+faNum(i)+'</option>').join('');m.innerHTML='<option value="">دقیقه</option>'+Array.from({length:12},(_,i)=>{const v=String(i*5).padStart(2,'0');return '<option value="'+v+'">'+faNum(v)+'</option>'}).join('');const sync=()=>{$(id).value=h.value!==''&&m.value!==''?h.value+':'+m.value:''};h.addEventListener('change',sync);m.addEventListener('change',sync)})}
+function setTimePicker(id,value){const h=$(id+'Hour'),m=$(id+'Minute');if(!h||!m)return;if(!value){h.value='';m.value='';$(id).value='';return}const [hh,mm]=value.split(':');h.value=hh;const rounded=String(Math.round(Number(mm)/5)*5%60).padStart(2,'0');m.value=rounded;$(id).value=hh+':'+rounded}
 function shiftDate(n){const current=readJalaliInput('reportDate',true)||todayISO(),d=dateObj(current);d.setDate(d.getDate()+n);const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');setJalaliInput('reportDate',iso);updateDateLabel();loadDateReport()}
 function updateDateLabel(){const iso=readJalaliInput('reportDate');$('jalaliDate').textContent=iso?'تاریخ انتخاب‌شده: '+jalali(iso):'تاریخ شمسی را به شکل ۱۴۰۵/۰۷/۲۳ وارد کنید.'}
 function moveCalendar(n){calendarMonth+=n;if(calendarMonth<1){calendarMonth=12;calendarYear--}if(calendarMonth>12){calendarMonth=1;calendarYear++}renderCalendar()}
@@ -138,8 +182,8 @@ function renderCalendar(){
  $('calendarDays').innerHTML=out;$('calendarDays').querySelectorAll('button[data-iso]').forEach(b=>b.onclick=()=>chooseDate(b.dataset.iso));
 }
 function chooseDate(iso){setJalaliInput('reportDate',iso);$('calendarPanel').classList.add('hidden');updateDateLabel();loadDateReport()}
-function loadDateReport(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim(),date=readJalaliInput('reportDate');if(!date)return;const r=getReports().find(x=>x.date===date&&x.ownerName===name);clearForm(false);if(r){editingId=r.id;$('clockIn').value=r.clockIn||'';$('clockOut').value=r.clockOut||'';$('money').value=r.money||'';$('projectName').value=r.projectName||'';$('description').value=r.description||'';photoData=r.photo||'';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden')}else{$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden')}}
-function clearForm(resetMsg=true){editingId=null;$('clockIn').value='';$('clockOut').value='';$('money').value='';$('projectName').value='';$('description').value='';$('photo').value='';photoData='';$('photoPreview').removeAttribute('src');$('photoPreview').classList.add('hidden');if(resetMsg){$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden');$('saveMessage').textContent=''}}
+function loadDateReport(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim(),date=readJalaliInput('reportDate');if(!date)return;const r=getReports().find(x=>x.date===date&&x.ownerName===name);clearForm(false);if(r){editingId=r.id;setTimePicker('clockIn',r.clockIn||'');setTimePicker('clockOut',r.clockOut||'');$('money').value=r.money||'';$('projectName').value=r.projectName||'';$('description').value=r.description||'';photoData=r.photo||'';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden')}else{$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden')}}
+function clearForm(resetMsg=true){editingId=null;setTimePicker('clockIn','');setTimePicker('clockOut','');$('money').value='';$('projectName').value='';$('description').value='';$('photo').value='';photoData='';$('photoPreview').removeAttribute('src');$('photoPreview').classList.add('hidden');if(resetMsg){$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden');$('saveMessage').textContent=''}}
 function handlePhoto(){const file=$('photo').files[0];if(!file)return;if(!file.type.startsWith('image/')){$('saveMessage').textContent='لطفاً یک فایل عکس انتخاب کن.';$('photo').value='';return}if(file.size>8*1024*1024){$('saveMessage').textContent='حجم عکس باید کمتر از ۸ مگابایت باشد.';$('photo').value='';return}const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas'),max=1000,scale=Math.min(1,max/Math.max(img.width,img.height));canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);photoData=canvas.toDataURL('image/jpeg',.68);$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden');$('saveMessage').textContent='عکس آماده است؛ با ذخیره گزارش در همین مرورگر می‌ماند.'};img.onerror=()=>{$('saveMessage').textContent='این عکس باز نشد؛ یک عکس دیگر انتخاب کن.'};img.src=e.target.result};reader.readAsDataURL(file)}
 function saveReport(){
  const date=readJalaliInput('reportDate',true),name=$('workerName').value.trim();if(!date){$('saveMessage').textContent='تاریخ گزارش را به شکل شمسی وارد یا از تقویم انتخاب کن.';return}if(!name){$('saveMessage').textContent='اول نام خود را بالای صفحه وارد و ذخیره کن.';$('workerName').focus();return}
@@ -150,7 +194,7 @@ function saveReport(){
  try{setReports(arr)}catch(e){$('saveMessage').textContent='ذخیره انجام نشد؛ فضای مرورگر احتمالاً برای عکس‌ها پر شده. عکس را کوچک‌تر کن یا نسخه پشتیبان بگیر.';return}
  $('saveMessage').textContent='گزارش '+jalali(date)+' ذخیره شد و روی همین مرورگر می‌ماند.';clearForm(false);renderAll();loadDateReport();
 }
-function renderReports(){const filter=readJalaliInput('filterDate'),query=($('searchProject').value||'').trim().toLocaleLowerCase(),name=localStorage.getItem(nameKey)||$('workerName').value.trim();let rows=getReports().filter(r=>!name||r.ownerName===name).filter(r=>!filter||r.date===filter).filter(r=>!query||(r.projectName||'').toLocaleLowerCase().includes(query)).sort((a,b)=>b.date.localeCompare(a.date));$('reportsList').innerHTML=rows.length?rows.map(r=>'<div class="report"><div class="reporthead"><strong>'+safe(jalali(r.date))+'</strong><span class="pill">'+safe(r.ownerName)+'</span></div>'+(r.projectName?'<div class="muted" style="margin-top:8px">پروژه: '+safe(r.projectName)+'</div>':'')+'<p>'+(r.clockIn||r.clockOut?'ورود: '+safe(r.clockIn||'—')+' | خروج: '+safe(r.clockOut||'—')+'<br>ساعت کار: '+faNum(r.hours)+' ساعت<br>':'')+'واریزی: '+moneyFmt(r.money)+'</p>'+(r.description?'<p>'+safe(r.description)+'</p>':'')+(r.photo?'<img class="photo" src="'+r.photo+'" alt="عکس گزارش">':'')+'<div class="actions" style="margin-top:10px"><button class="btn secondary" onclick="editReport(\''+r.id+'\')">ویرایش</button><button class="btn danger" onclick="deleteReport(\''+r.id+'\')">حذف</button></div></div>').join(''):'<div class="empty">هنوز گزارشی برای نمایش وجود ندارد.</div>'}
+function renderReports(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim();let rows=getReports().filter(r=>!name||r.ownerName===name).sort((a,b)=>b.date.localeCompare(a.date));$('reportsList').innerHTML=rows.length?rows.map(r=>'<div class="report"><div class="reporthead"><strong>'+safe(jalali(r.date))+'</strong><span class="pill">'+safe(r.ownerName)+'</span></div>'+(r.projectName?'<div class="muted" style="margin-top:8px">پروژه: '+safe(r.projectName)+'</div>':'')+'<p>'+(r.clockIn||r.clockOut?'ورود: '+safe(r.clockIn||'—')+' | خروج: '+safe(r.clockOut||'—')+'<br>ساعت کار: '+faNum(r.hours)+' ساعت<br>':'')+'واریزی: '+moneyFmt(r.money)+'</p>'+(r.description?'<p>'+safe(r.description)+'</p>':'')+(r.photo?'<img class="photo" src="'+r.photo+'" alt="عکس گزارش">':'')+'<div class="actions" style="margin-top:10px"><button class="btn secondary" onclick="editReport(\''+r.id+'\')">ویرایش</button><button class="btn danger" onclick="deleteReport(\''+r.id+'\')">حذف</button></div></div>').join(''):'<div class="empty">هنوز گزارشی برای نمایش وجود ندارد.</div>'}
 function editReport(id){const r=getReports().find(x=>x.id===id);if(!r)return;setJalaliInput('reportDate',r.date);updateDateLabel();editingId=r.id;$('clockIn').value=r.clockIn||'';$('clockOut').value=r.clockOut||'';$('money').value=r.money||'';$('projectName').value=r.projectName||'';$('description').value=r.description||'';photoData=r.photo||'';$('photo').value='';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}else{$('photoPreview').classList.add('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
 function deleteReport(id){if(!confirm('این گزارش حذف شود؟'))return;try{setReports(getReports().filter(r=>r.id!==id));renderAll();loadDateReport()}catch(e){alert('حذف گزارش انجام نشد. دوباره تلاش کن.')}}
 function renderAll(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim(),rows=getReports().filter(r=>!name||r.ownerName===name),hours=rows.reduce((s,r)=>s+(Number(r.hours)||0),0),money=rows.reduce((s,r)=>s+(Number(r.money)||0),0);$('totalHours').textContent=faNum(Math.round(hours*100)/100)+' ساعت';$('totalMoney').textContent=moneyFmt(money);$('totalReports').textContent=faNum(rows.length);renderReports()}
