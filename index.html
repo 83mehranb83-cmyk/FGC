@@ -128,10 +128,10 @@ function shiftDate(n){const current=readJalaliInput('reportDate',true)||todayISO
 function updateDateLabel(){const iso=readJalaliInput('reportDate');$('jalaliDate').textContent=iso?'تاریخ انتخاب‌شده: '+jalali(iso):'تاریخ شمسی را به شکل ۱۴۰۵/۰۷/۲۳ وارد کنید.'}
 function moveCalendar(n){calendarMonth+=n;if(calendarMonth<1){calendarMonth=12;calendarYear--}if(calendarMonth>12){calendarMonth=1;calendarYear++}renderCalendar()}
 function renderCalendar(){
- $('calTitle').textContent=new Intl.DateTimeFormat('fa-IR-u-ca-persian',{month:'long',year:'numeric'}).format(new Date(Date.UTC(calendarYear+621,2,21,12)));
+ 
  const dates=[];let start=new Date(calendarYear+620,0,1,12);
  for(let i=0;i<740;i++){const d=new Date(start);d.setDate(d.getDate()+i);const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');const p=jalaliParts(iso);if(p.year===calendarYear&&p.month===calendarMonth)dates.push({iso,day:p.day,weekday:d.getDay()})}
- const first=dates[0];if(!first)return;
+ const first=dates[0];if(!first)return;$('calTitle').textContent=new Intl.DateTimeFormat('fa-IR-u-ca-persian',{month:'long',year:'numeric'}).format(dateObj(first.iso));
  const offset=(first.weekday+1)%7;let out='';for(let i=0;i<offset;i++)out+='<button type="button" class="empty-day" tabindex="-1"></button>';
  const selected=readJalaliInput('reportDate');
  dates.forEach(x=>{const cls=[x.iso===todayISO()?'today':'',x.iso===selected?'selected':''].filter(Boolean).join(' ');out+='<button type="button" class="'+cls+'" data-iso="'+x.iso+'" aria-label="'+safe(jalali(x.iso))+'">'+faNum(x.day)+'</button>'});
