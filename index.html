@@ -408,6 +408,7 @@ function renderReports(){
 let reportCalendarYear=0,reportCalendarMonth=0,selectedReportISO=todayISO();
 function moveReportCalendar(n){reportCalendarMonth+=n;if(reportCalendarMonth<1){reportCalendarMonth=12;reportCalendarYear--}if(reportCalendarMonth>12){reportCalendarMonth=1;reportCalendarYear++}renderReportCalendar()}
 function renderReportCalendar(){
+ if(!reportCalendarYear||!reportCalendarMonth){const p=jalaliParts(selectedReportISO||todayISO());reportCalendarYear=p.year;reportCalendarMonth=p.month}
  const all=getReports(),counts={};all.forEach(r=>{counts[r.date]=(counts[r.date]||0)+1});
  const start=new Date(reportCalendarYear+620,0,1,12),dates=[];
  for(let i=0;i<740;i++){const d=new Date(start);d.setDate(d.getDate()+i);const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),p=jalaliParts(iso);if(p.year===reportCalendarYear&&p.month===reportCalendarMonth)dates.push({iso,day:p.day,weekday:d.getDay()})}
