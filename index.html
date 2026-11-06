@@ -339,6 +339,22 @@ body{background:radial-gradient(ellipse at 85% 0%,#31492b 0,transparent 35%),#17
 .selected-day-heading h3{font-size:14px;color:#e3d19a;margin:0 0 8px}
 .report-calendar-section .section-heading-row h2{margin:0 0 7px!important}
 @media(max-width:520px){.compact-report{padding:11px!important}.report-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.report-metric{padding:8px}.report-calendar{padding:10px}.report-calendar-days{gap:3px}.report-calendar-days button{min-height:47px;border-radius:9px}.report-cal-day-num{font-size:12px}.compact-actions .btn{flex:1}.compact-owner{max-width:55%}}
+
+/* Secure first-admin setup panel */
+.setup-card{margin:0 auto 18px;max-width:620px;padding:20px;border:1px solid #d9dfd2;border-radius:18px;background:linear-gradient(145deg,#f6f5eb,#fff);box-shadow:0 8px 24px rgba(54,70,45,.07)}
+.setup-card h2{margin:0 0 8px;color:#34452e;font-size:1.2rem}
+.setup-card .setup-note{color:#687361;font-size:.9rem;line-height:1.9;margin:0 0 14px}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.setup-field{display:flex;flex-direction:column;gap:6px}
+.setup-field.full{grid-column:1/-1}
+.setup-field label{font-size:.88rem;color:#43513b;font-weight:600}
+.setup-field input{width:100%;min-width:0;border:1px solid #d4dacd;border-radius:11px;padding:12px;background:#fff;color:#273323;font:inherit;direction:ltr}
+.setup-field input::placeholder{color:#9aa293}
+.setup-submit{width:100%;margin-top:14px}
+.setup-status{font-size:.9rem;line-height:1.8;margin:10px 0 0;min-height:1.6em}
+.setup-status.error{color:#a33b32}.setup-status.success{color:#376b39}
+@media(max-width:560px){.setup-grid{grid-template-columns:1fr}.setup-field.full{grid-column:auto}.setup-card{padding:16px}}
+
 </style>
 </head>
 <body>
@@ -349,6 +365,19 @@ body{background:radial-gradient(ellipse at 85% 0%,#31492b 0,transparent 35%),#17
 <section id="appView">
 
 
+
+<section id="adminSetupCard" class="setup-card" aria-labelledby="adminSetupTitle">
+  <h2 id="adminSetupTitle">راه‌اندازی حساب مدیر FGC</h2>
+  <p class="setup-note">این مرحله فقط برای ساخت اولین مدیر سامانه است. نام کاربری مدیر ثابت است؛ کد راه‌اندازی و رمز را فقط در همین صفحه وارد کن. این اطلاعات در مرورگر ذخیره نمی‌شوند.</p>
+  <div class="setup-grid">
+    <div class="setup-field"><label for="setupUsername">نام کاربری مدیر</label><input id="setupUsername" value="mehran" readonly autocomplete="username"></div>
+    <div class="setup-field"><label for="setupDisplayName">نام نمایشی</label><input id="setupDisplayName" value="مهران" autocomplete="name"></div>
+    <div class="setup-field full"><label for="setupToken">کد راه‌اندازی (FGC_BOOTSTRAP_TOKEN)</label><input id="setupToken" type="password" placeholder="کدی که در Supabase ثبت کردی" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    <div class="setup-field full"><label for="setupPassword">رمز ورود مدیر (حداقل ۱۰ نویسه)</label><input id="setupPassword" type="password" placeholder="یک رمز قوی وارد کن" minlength="10" autocomplete="new-password"></div>
+  </div>
+  <button type="button" id="setupAdminBtn" class="btn setup-submit">ساخت حساب مدیر</button>
+  <p id="setupAdminStatus" class="setup-status" role="status" aria-live="polite"></p>
+</section>
 <section id="homeSection" class="home-screen app-section">
 <div class="home-intro"><span class="home-eyebrow">FGC WORKSPACE</span><h2>خوش اومدی</h2><p>برای ادامه یکی از بخش‌ها رو انتخاب کن.</p></div>
 <div class="home-actions">
@@ -398,6 +427,34 @@ function setReports(a){localStorage.setItem(storeKey,JSON.stringify(a))}
 function calcHours(a,b){if(!a||!b)return 0;let [ah,am]=a.split(':').map(Number),[bh,bm]=b.split(':').map(Number);let mins=bh*60+bm-(ah*60+am);if(mins<0)mins+=1440;return Math.round(mins/60*100)/100}
 function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
+
+const FGC_SUPABASE_URL='https://rragiuvabreewkhlsmom.supabase.co';
+const FGC_PUBLISHABLE_KEY='sb_publishable_ge_EBqLX7NXIcYjuhmX7kw_7hwNRyEt';
+async function bootstrapAdmin(){
+ const btn=$('setupAdminBtn'),status=$('setupAdminStatus');
+ const token=$('setupToken').value.trim(),password=$('setupPassword').value,displayName=$('setupDisplayName').value.trim();
+ status.className='setup-status';status.textContent='';
+ if(!token){status.classList.add('error');status.textContent='کد راه‌اندازی را وارد کن.';return}
+ if(password.length<10){status.classList.add('error');status.textContent='رمز ورود باید حداقل ۱۰ نویسه باشد.';return}
+ if(!displayName){status.classList.add('error');status.textContent='نام نمایشی را وارد کن.';return}
+ btn.disabled=true;btn.textContent='در حال ساخت حساب...';
+ try{
+  const response=await fetch(FGC_SUPABASE_URL+'/functions/v1/fgc-account-admin',{
+   method:'POST',
+   headers:{'Content-Type':'application/json','apikey':FGC_PUBLISHABLE_KEY,'x-fgc-setup-token':token},
+   body:JSON.stringify({action:'bootstrap_admin',username:'mehran',display_name:displayName,password})
+  });
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok||!result.ok)throw new Error(result.error||('خطا در ساخت حساب ('+response.status+')'));
+  $('setupToken').value='';$('setupPassword').value='';
+  status.classList.add('success');status.textContent='حساب مدیر با موفقیت ساخته شد. این فرم دیگر برای ساخت مدیر اولیه قابل استفاده نیست؛ مرحله بعد، اضافه‌کردن ورود و اتصال گزارش‌هاست.';
+  btn.textContent='حساب مدیر ساخته شد';btn.disabled=true;
+ }catch(error){
+  status.classList.add('error');status.textContent=error.message||'ارتباط با سرور برقرار نشد. اتصال اینترنت و کد راه‌اندازی را بررسی کن.';
+  btn.disabled=false;btn.textContent='ساخت حساب مدیر';
+ }
+}
+
 let activeView='home';
 function switchView(view){
  const homeButton=$('globalHomeButton');if(homeButton)homeButton.classList.toggle('hidden',view==='home');
@@ -423,6 +480,7 @@ function init(){
  $('cancelEdit').onclick=()=>{clearForm();$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden')};
 $('photo').onchange=handlePhoto;
  $('saveNameBtn').onclick=()=>{const n=$('workerName').value.trim();if(!n){$('nameMessage').textContent='لطفاً نام خود را وارد کنید.';return}localStorage.setItem(nameKey,n);$('nameMessage').textContent='نام شما روی همین دستگاه ذخیره شد.';renderAll();loadDateReport()};
+ $('setupAdminBtn').onclick=bootstrapAdmin;
  $('exportBtn').onclick=exportBackup;$('importFile').onchange=importBackup;$('pdfBtn').onclick=exportReportsPDF;
  $('searchProject').addEventListener('input',renderReports);$('searchName').addEventListener('input',renderReports);$('filterDate').addEventListener('input',renderReports);$('clearFilters').onclick=()=>{$('searchProject').value='';$('searchName').value='';$('filterDate').value='';renderReports()};
  renderAll();loadDateReport();switchView("home");
