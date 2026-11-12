@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#303b22"><title>FGC | گزارش کار روزانه</title>
+<style>
+:root{--bg:#f4f5ef;--card:#fff;--ink:#202719;--muted:#78806c;--green:#303b22;--green2:#465632;--line:#e1e5d9;--gold:#c7a96b;--danger:#a33b32}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.top{background:linear-gradient(130deg,#20291a,#465632);color:#fff;padding:24px max(18px,calc((100% - 1080px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:12px}.mark{width:48px;height:48px;border:1px solid #a8b18e;border-radius:14px;display:grid;place-items:center;font-size:20px;font-weight:bold;color:#e5d3a4}.brand h1{font-size:19px;margin:0 0 5px}.brand p{margin:0;color:#d0d8c4;font-size:12px}.tag{font-size:12px;color:#f1dfb5;letter-spacing:2px}.wrap{max-width:1080px;margin:22px auto;padding:0 16px 40px}.notice{background:#fff5db;border:1px solid #ead7a1;color:#655326;padding:12px 15px;border-radius:12px;font-size:13px;line-height:1.9;margin-bottom:18px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 18px #1d281008}.stat{padding:17px}.stat span{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:9px;color:var(--green)}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.card{padding:20px;margin-bottom:16px}.card h2{font-size:16px;margin:0 0 17px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:14px}.field label{display:block;font-size:12px;color:#56604c;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;border:1px solid #dce1d4;background:#fbfcf9;border-radius:10px;padding:12px;color:var(--ink);outline:none}.field input:focus,.field textarea:focus{border-color:var(--green2);box-shadow:0 0 0 3px #46563214}.field textarea{min-height:110px;resize:vertical}.btn{border:0;border-radius:10px;padding:11px 16px;background:var(--green);color:#fff;font-weight:bold}.btn:hover{background:var(--green2)}.btn.secondary{background:#eef1e8;color:var(--green)}.btn.danger{background:#f9e9e7;color:var(--danger)}.actions{display:flex;gap:9px;flex-wrap:wrap}.datebar{display:flex;gap:8px;align-items:center;margin-bottom:15px}.datebar input{flex:1;min-width:0}.datebar button{white-space:nowrap}.muted{color:var(--muted);font-size:12px}.report{border:1px solid var(--line);border-radius:12px;padding:13px;margin-top:10px}.reporthead{display:flex;justify-content:space-between;gap:10px;align-items:center}.reporthead strong{font-size:13px}.report p{font-size:13px;line-height:1.8;white-space:pre-wrap}.pill{display:inline-block;background:#edf1e6;color:#40502d;border-radius:30px;padding:5px 9px;font-size:11px}.photo{max-width:100%;max-height:160px;border-radius:9px;margin-top:8px}.hidden{display:none!important}.login{max-width:430px;margin:42px auto;padding:24px}.login .field{margin-bottom:15px}.login h2{font-size:20px}.foot{text-align:center;color:#8b9281;font-size:11px;margin-top:20px}.top{position:relative;overflow:hidden}.top:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff12;border-radius:50%;left:-90px;top:-155px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff05;pointer-events:none}.mark{box-shadow:0 6px 22px #0002;background:#ffffff08}.card{transition:box-shadow .2s,border-color .2s}.card:hover{border-color:#d1d8c4;box-shadow:0 10px 28px #1d28100d}.stat{background:linear-gradient(145deg,#fff,#f8f9f4);position:relative;overflow:hidden}.stat:after{content:"";position:absolute;width:58px;height:58px;border:8px solid #4656320b;border-radius:50%;left:-18px;bottom:-25px}.stat strong{letter-spacing:-.4px}.btn{transition:transform .15s,background .15s,box-shadow .15s}.btn:hover{transform:translateY(-1px);box-shadow:0 5px 12px #303b221b}.report{background:linear-gradient(135deg,#fff,#fcfdf9);border-radius:14px;transition:border-color .2s}.report:hover{border-color:#bdc9a9}.field input,.field textarea,.field select{transition:border-color .15s,box-shadow .15s}.field input[type=date],.field input[type=time]{min-height:44px}.section-kicker{font-size:11px;color:#78806c;letter-spacing:.4px;margin-top:-10px;margin-bottom:14px}.userbox{display:flex;align-items:center;gap:10px}.userbox small{color:#d4ddc8}.empty{text-align:center;color:#7e8674;padding:25px 5px;font-size:13px}@media(max-width:760px){.layout{grid-template-columns:1fr}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:19px}.top{padding:18px 16px}.tag{display:none}.card{padding:16px}}@media(max-width:390px){.row{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat strong{font-size:20px}}
+
+/* FGC lively moss-green visual refresh */
+:root{--bg:#edf1e5;--card:#ffffff;--ink:#202b19;--muted:#6d7b60;--green:#263b20;--green2:#3e5b30;--line:#d9e3cf;--gold:#d0b477;--danger:#a33b32}
+body{background:radial-gradient(ellipse at 90% 8%,#d8e4c8 0,transparent 32%),radial-gradient(ellipse at 5% 40%,#e2ead6 0,transparent 27%),#f1f4eb}
+.top{background:linear-gradient(120deg,#172817 0%,#2f4b26 52%,#4d6939 100%);padding-top:30px;padding-bottom:30px;box-shadow:0 12px 32px #24391e26}
+.brand h1{font-size:21px;letter-spacing:-.4px}.brand p{color:#e0e9d6}.mark{border-radius:17px;border:1px solid #d8c18b;color:#f0dba6;background:linear-gradient(145deg,#ffffff18,#ffffff05);width:54px;height:54px;font-size:21px;box-shadow:0 8px 24px #0002}
+.tag{background:#ffffff10;border:1px solid #ffffff20;border-radius:999px;padding:10px 15px;font-size:10px;letter-spacing:1.4px}
+.wrap{max-width:1160px;margin:26px auto;padding-bottom:54px}
+.notice{background:linear-gradient(110deg,#e2ecd5,#f8f5e8);border:1px solid #cad9b9;border-right:5px solid #66864a;color:#415536;box-shadow:0 6px 20px #2c47200b;border-radius:15px;padding:15px 18px}
+.card{border:1px solid #dbe4d2;border-radius:20px;padding:22px;box-shadow:0 8px 28px #24391e0b;background:linear-gradient(155deg,#fff 0%,#fcfdf9 100%)}
+.card h2{display:flex;align-items:center;gap:10px;font-size:16px;color:#2d4424;margin-bottom:20px}
+.card h2:before{content:"";display:inline-block;width:5px;height:20px;border-radius:8px;background:linear-gradient(#789957,#2f4a27)}
+.stats{gap:15px}
+.stat{padding:20px 19px;border:1px solid #d8e3ce;border-radius:19px;background:linear-gradient(135deg,#fff 10%,#f3f7ed 100%);box-shadow:0 8px 24px #263b200c}
+.stat span{font-size:12px;color:#65765a}.stat strong{font-size:26px;color:#2c4824;margin-top:12px}
+.stat:after{width:78px;height:78px;border-width:11px;border-color:#4d713b12;left:-18px;bottom:-32px}
+.layout{gap:19px;grid-template-columns:1.12fr .88fr}
+.field{margin-bottom:17px}.field label{font-weight:600;color:#45583a;font-size:12px;margin-bottom:8px}
+.field input,.field textarea,.field select{border:1px solid #d9e3d1;background:#f8faf5;border-radius:13px;padding:13px 14px;min-height:46px}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#63834d;box-shadow:0 0 0 4px #5b7d4218;background:#fff}
+.field textarea{min-height:125px;line-height:1.9}
+.btn{border-radius:12px;padding:12px 17px;background:linear-gradient(135deg,#2d4824,#476936);box-shadow:0 5px 12px #2e492019}
+.btn:hover{background:linear-gradient(135deg,#3a592d,#577d40)}
+.btn.secondary{background:#e9f0e1;border:1px solid #d7e3cd;color:#35512a;box-shadow:none}
+.btn.secondary:hover{background:#dce9d1}
+.btn.danger{background:#fbecea;border:1px solid #f1d5d1;box-shadow:none}
+.actions{gap:10px}.datebar{gap:9px}.datebar button{padding:10px 12px}
+.report{padding:15px;border-radius:16px;border-color:#dce6d3;background:linear-gradient(135deg,#fff,#f7faf3);box-shadow:0 4px 14px #2c442009}
+.reporthead strong{color:#2d4625}.pill{background:#e4edd9;color:#3e5c2e;border:1px solid #d5e3c7}
+#workerName{font-weight:600}
+#saveNameBtn{min-width:130px}
+#searchProject{background:#f4f8ef;border-color:#cbdcbd}
+#searchProject:focus{background:white}
+.empty{border:1px dashed #cfddc4;border-radius:15px;background:#f8faf5}
+.foot{padding:18px 0;color:#718263;letter-spacing:.4px}
+@media(max-width:760px){.top{padding:22px 16px}.wrap{margin:16px auto;padding-left:12px;padding-right:12px}.card{padding:17px;border-radius:17px}.stats{gap:9px}.stat{padding:14px 12px;border-radius:15px}.stat strong{font-size:20px}.stat span{font-size:11px}.tag{display:none}}
+@media(max-width:390px){.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}.stats .stat strong{font-size:21px}}
+
+/* Modern calendar + app polish */
+.datebar{display:grid;grid-template-columns:auto minmax(110px,1fr) auto auto;align-items:stretch;margin-bottom:10px}
+.datebar input{min-width:0;width:100%;font-size:16px;font-weight:700;text-align:center;color:#263d20;border:2px solid #91aa7b!important;background:#f4f8ef!important;min-height:49px;border-radius:13px;padding:10px}
+.datebar button{font-size:12px;padding:10px 11px;min-height:46px}
+.date-hint{margin:5px 0 18px;font-weight:600;color:#4b6739}
+.calendar{background:linear-gradient(145deg,#fff,#f5f8f0);border:1px solid #cbd9bf;border-radius:18px;padding:14px;margin:10px 0 18px;box-shadow:0 12px 30px #263b2017}
+.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
+.calendar-head strong{color:#2e4925;font-size:15px}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center}
+.calendar-weekdays{margin-bottom:7px;color:#718465;font-size:12px;font-weight:700}
+.calendar-weekdays span{padding:6px 0}
+.calendar-days button{border:1px solid transparent;background:#f0f4e9;color:#304628;border-radius:10px;min-height:39px;padding:5px 0;font-weight:600}
+.calendar-days button:hover{background:#dfead4;border-color:#b6cba5}
+.calendar-days button.today{border-color:#66884d;background:#e1ecd7}
+.calendar-days button.selected{background:linear-gradient(135deg,#2c4723,#52783d);color:#fff;box-shadow:0 4px 10px #304b2428}
+.calendar-days button.empty-day{visibility:hidden}
+.calendar-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.filter-date-row{display:flex;gap:8px;align-items:stretch}
+.filter-date-row input{min-width:0;flex:1}
+.filter-date-row button{white-space:nowrap}
+.stats .stat:first-child{border-top:3px solid #73985a}
+.stats .stat:nth-child(2){border-top:3px solid #bda36a}
+.stats .stat:nth-child(3){border-top:3px solid #9aaf85}
+#saveBtn{min-width:150px}
+@media(max-width:520px){.datebar{grid-template-columns:1fr 1.35fr;gap:7px}.datebar input{grid-column:1/-1;grid-row:1;font-size:18px}.datebar #prevDay{grid-column:1;grid-row:2}.datebar #nextDay{grid-column:2;grid-row:2}.datebar #openCalendar{grid-column:1/-1;grid-row:3}.calendar{padding:11px}.calendar-days{gap:3px}.calendar-days button{min-height:37px}.filter-date-row{flex-direction:column}}
+
+/* FGC deep moss app skin */
+:root{--bg:#172317;--card:#243522;--ink:#f0f4e9;--muted:#b2c3a4;--green:#37562b;--green2:#52783e;--line:#3d5735;--gold:#d4bb7a}
+body{background:radial-gradient(ellipse at 80% 0%,#35502b 0,transparent 38%),radial-gradient(ellipse at 0% 55%,#263c25 0,transparent 38%),#172317;color:#edf4e5}
+.wrap{max-width:980px}
+.notice{background:linear-gradient(120deg,#304a29,#263c25);border-color:#506d41;border-right-color:#d0b477;color:#e3edda}
+.card,.stat{background:linear-gradient(145deg,#293d27,#223321);border-color:#3c5734;box-shadow:0 12px 30px #0710074a;color:#eff5e9}
+.card h2,.reporthead strong{color:#e4efd8}
+.card h2:before{background:linear-gradient(#d7c184,#759c5a)}
+.stat{background:linear-gradient(135deg,#304a2a,#223421);border-color:#4a6540}
+.stat span,.field label,.muted,.section-kicker{color:#b7c9a8}
+.stat strong{color:#e0d19d}
+.field input,.field textarea,.field select{background:#1b2b1b;border-color:#4a6540;color:#f1f5e9}
+.field input::placeholder,.field textarea::placeholder{color:#819578}
+.field input:focus,.field textarea:focus,.field select:focus{background:#203321;border-color:#9dbb7e;box-shadow:0 0 0 4px #9bbd751f}
+.btn{background:linear-gradient(135deg,#54783c,#36562a);color:#fff;border:1px solid #64864c}
+.btn:hover{background:linear-gradient(135deg,#668b4a,#42672f)}
+.btn.secondary{background:#30472a;border-color:#526d42;color:#e1edcf}
+.btn.secondary:hover{background:#3c5831}
+.btn.danger{background:#542f2a;border-color:#815048;color:#ffd9d3}
+.pill{background:#3b5530;border-color:#536f43;color:#e3edcf}
+.report{background:linear-gradient(145deg,#2b4028,#223421);border-color:#425e38;box-shadow:0 5px 16px #0b170a50}
+.report:hover{border-color:#7d9e64}
+.empty{background:#1d2e1d;border-color:#526d42;color:#b4c5a6}
+.photo{border:2px solid #587548}
+.foot{color:#9caf8d}
+.layout{display:contents}
+.reports-card{margin-top:0}
+.time-picker{display:flex;align-items:center;gap:8px;min-height:58px;padding:7px 10px;border:1px solid #587447;border-radius:15px;background:linear-gradient(135deg,#30492a,#1b2c1b);box-shadow:inset 0 1px #ffffff0a}
+.time-picker .time-icon{font-size:22px;color:#d5c080}
+.time-picker select{appearance:none;-webkit-appearance:none;flex:1;min-width:0;text-align:center;text-align-last:center;font-size:21px;font-weight:700;color:#e6d59a;background:#223621;border:1px solid #4c6840;border-radius:10px;padding:9px 3px;outline:none}
+.time-picker b{color:#d6c182;font-size:22px}
+.datebar input{background:#1c2c1b!important;color:#f1dfab!important;border-color:#72935d!important}
+.calendar{background:linear-gradient(145deg,#2c4329,#1d2f1d);border-color:#526e43}
+.calendar-head strong{color:#e7eddb}.calendar-weekdays{color:#b5c8a6}
+.calendar-days button{background:#354d2e;color:#e5efd9}
+.calendar-days button:hover{background:#49683b;border-color:#73985b}
+.calendar-days button.today{background:#425f34;border-color:#b6c98a}
+.calendar-days button.selected{background:linear-gradient(135deg,#a6bd78,#52773b);color:#142111}
+.calendar-foot .muted{color:#b4c7a4}
+#workerName{background:#1b2b1b}
+#photo{padding:10px}
+@media(max-width:520px){.row{grid-template-columns:1fr 1fr;gap:9px}.time-picker{gap:5px;padding:6px}.time-picker select{font-size:19px;min-height:44px}.card{padding:15px}.stats .stat{min-height:95px}}
+@media(max-width:390px){.row{grid-template-columns:1fr}}
+
+/* Refined balance: calm stone surfaces with restrained moss accents */
+:root{--bg:#e9e9df;--card:#f8f7f1;--ink:#262b22;--muted:#777b6e;--green:#3d4d32;--green2:#596b48;--line:#d9d9cc;--gold:#b89b60}
+body{background:radial-gradient(ellipse at 90% 0%,#e0e4d5 0,transparent 35%),#e9e9df;color:#292e25}
+.top{background:linear-gradient(115deg,#293327 0%,#3d4a35 72%,#59644b 100%);box-shadow:0 10px 26px #2731251a}
+.notice{background:#f4f0e3;border-color:#e2d8bc;border-right-color:#b79c61;color:#55513f}
+.card,.stat{background:#f9f8f2;border-color:#dedfd3;color:#292e25;box-shadow:0 8px 24px #252c1e0b}
+.card h2,.reporthead strong{color:#343e2e}
+.card h2:before{background:linear-gradient(#bda66e,#758466)}
+.stat{background:linear-gradient(140deg,#fbfaf5,#efefe6);border-color:#dedfd2}
+.stat strong{color:#3e5034}.stat span,.field label,.muted,.section-kicker{color:#74796a}
+.field input,.field textarea,.field select{background:#f0f0e8;border-color:#d8dacd;color:#292e25}
+.field input:focus,.field textarea:focus,.field select:focus{background:#fff;border-color:#8a9a78;box-shadow:0 0 0 3px #73866318}
+.btn{background:linear-gradient(135deg,#46563a,#34442e);border-color:#596b4c;box-shadow:0 4px 10px #29392312}
+.btn:hover{background:linear-gradient(135deg,#596b48,#43563a)}
+.btn.secondary{background:#e9e9df;border-color:#d5d8c9;color:#46533d;box-shadow:none}
+.btn.secondary:hover{background:#dfe2d4}
+.btn.danger{background:#f5e9e5;border-color:#e7d0c9;color:#91483d}
+.pill{background:#e7e8dc;border-color:#d9ddcc;color:#4b5940}
+.report{background:#f7f7f0;border-color:#dedfd3;box-shadow:0 4px 13px #252c1e08}
+.report:hover{border-color:#aeb99f}
+.empty{background:#f0f1e9;border-color:#d3d8c8;color:#747b69}
+.foot{color:#818675}
+.datebar input{background:#f5f4ec!important;color:#3d4d32!important;border-color:#aeb99e!important}
+.calendar{background:#f8f7f0;border-color:#d4d8c8}
+.calendar-head strong{color:#3d4d32}.calendar-weekdays{color:#737c68}
+.calendar-days button{background:#eceee5;color:#3d4934}
+.calendar-days button:hover{background:#dfe5d5;border-color:#bdc9ae}
+.calendar-days button.today{background:#e8eadc;border-color:#9baa86}
+.calendar-days button.selected{background:linear-gradient(135deg,#596b48,#3f5134);color:#fff}
+.calendar-foot .muted{color:#737b68}
+#workerName{background:#f0f0e8}
+.time-picker{position:relative;gap:9px;min-height:78px;padding:10px 12px;border:1px solid #d8d9cc;border-radius:17px;background:linear-gradient(145deg,#fbfaf5,#eeefe6);box-shadow:0 5px 14px #2731250a;transition:border-color .18s,box-shadow .18s}
+.time-picker:focus-within{border-color:#9aa889;box-shadow:0 0 0 4px #7d91651a,0 6px 16px #2731250b}
+.time-picker .time-icon{display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;border-radius:13px;background:#e1e5d8;color:#4c6040;font-size:23px;box-shadow:inset 0 0 0 1px #d2d9c7}
+.time-picker[data-time="clockIn"] .time-icon{background:#e5e9dd;color:#4e6542}
+.time-picker[data-time="clockOut"] .time-icon{background:#eee7d8;color:#8a7549}
+.time-picker select{appearance:none;-webkit-appearance:none;flex:1;min-width:0;text-align:center;text-align-last:center;font-size:22px;font-weight:700;color:#35452d;background:#fff;border:1px solid #e0e1d6;border-radius:11px;padding:10px 2px;min-height:49px;outline:none;box-shadow:0 2px 5px #28312008}
+.time-picker select:focus{border-color:#9baa89;background:#fff}
+.time-picker b{color:#8d927e;font-size:22px}
+.field:has(.time-picker){margin-bottom:18px}
+.field:has(.time-picker)>label{font-size:13px;color:#4b5543}
+@media(max-width:520px){.time-picker{min-height:72px;padding:8px;gap:6px}.time-picker .time-icon{flex-basis:33px;width:33px;height:33px;font-size:20px}.time-picker select{font-size:19px;min-height:45px}.card{background:#f8f7f1}}
+
+
+/* Bespoke FGC time chooser: tactile controls, moss green and warm brass */
+.time-entry{position:relative}
+.time-display{width:100%;min-height:94px;display:flex;align-items:center;gap:13px;text-align:right;padding:14px 15px;border:1px solid #a4b591;border-radius:19px;background:linear-gradient(135deg,#e2ead8 0%,#f4f3e9 72%);color:#293b24;box-shadow:0 7px 18px #263b2010;transition:transform .18s,box-shadow .18s,border-color .18s}
+.time-display:hover{transform:translateY(-2px);border-color:#6f8d59;box-shadow:0 10px 23px #263b2018}
+.time-display:focus-visible{outline:3px solid #b8c993;outline-offset:2px}
+.time-icon{flex:0 0 49px;width:49px;height:49px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(145deg,#3d5b30,#263d22);color:#f0dba3;font-size:30px;box-shadow:0 5px 12px #253d211e}
+.time-icon.out{background:linear-gradient(145deg,#7b7147,#4d5633)}
+.time-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:3px}
+.time-copy small{font-size:11px;color:#68775b}
+.time-copy strong{font-size:28px;line-height:1.2;letter-spacing:1px;color:#2f4827;font-variant-numeric:tabular-nums}
+.time-copy em{font-style:normal;font-size:10px;color:#7f8875}
+.time-chevron{font-size:22px;color:#657b53;padding:0 4px}
+.time-panel{position:relative;margin-top:9px;padding:16px;border:1px solid #9fb38d;border-radius:20px;background:radial-gradient(ellipse at 50% 0%,#e3ecd9 0,transparent 65%),linear-gradient(145deg,#f9f8f0,#e9eee1);box-shadow:0 14px 28px #253b201a;animation:timePanelIn .18s ease-out}
+@keyframes timePanelIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.time-panel-head{display:flex;justify-content:space-between;align-items:center;color:#354b2d;font-size:13px;font-weight:700}
+.clock-badge{display:grid;place-items:center;width:35px;height:35px;border-radius:12px;background:#d5e1c9;color:#3c5a2f;font-size:21px}
+.clock-badge.out{background:#e8dfc7;color:#78683c}
+.time-big{font-size:38px;font-weight:800;letter-spacing:2px;text-align:center;color:#304c27;margin:7px 0 12px;font-variant-numeric:tabular-nums;text-shadow:0 2px #fff}
+.time-adjust{display:flex;align-items:center;justify-content:center;gap:13px;padding:12px 8px;border-radius:16px;background:#e0e8d7;border:1px solid #cbd8bf}
+.time-wheel{display:grid;grid-template-columns:44px 54px 44px;grid-template-rows:42px auto;align-items:center;justify-items:center;gap:4px}
+.time-wheel button{width:39px;height:39px;border:1px solid #a5b994;border-radius:13px;background:linear-gradient(145deg,#fff,#edf2e7);color:#3b5a30;font-size:23px;font-weight:500;box-shadow:0 3px 7px #2d47200c}
+.time-wheel button:active{transform:scale(.94);background:#d3e2c6}
+.time-wheel strong{font-size:28px;color:#2d4824;font-variant-numeric:tabular-nums}
+.time-wheel small{grid-column:1/-1;font-size:11px;color:#718365}
+.time-colon{font-size:27px;color:#b29a5f;margin-top:-14px}
+.time-quick{display:flex;gap:7px;margin:12px 0}
+.time-quick button{flex:1;padding:9px 4px;border-radius:11px;border:1px solid #d0d9c6;background:#f5f6ef;color:#506344;font-size:11px;font-weight:700}
+.time-quick button:hover{background:#dce8d1;border-color:#a9bd98}
+.time-confirm{width:100%;padding:12px;border:1px solid #526e43;border-radius:13px;background:linear-gradient(120deg,#3e5b30,#263f22);color:#fff;font-weight:700;box-shadow:0 5px 12px #263b201b}
+.time-confirm:hover{background:linear-gradient(120deg,#537644,#34532a)}
+@media(min-width:521px){.row:has(.time-entry){gap:14px}.time-panel{z-index:4}}
+@media(max-width:520px){.time-display{min-height:84px;padding:11px;gap:9px}.time-icon{flex-basis:41px;width:41px;height:41px;font-size:25px}.time-copy strong{font-size:25px}.time-panel{padding:12px}.time-wheel{grid-template-columns:38px 45px 38px;grid-template-rows:39px auto}.time-wheel button{width:35px;height:35px}.time-wheel strong{font-size:25px}.time-adjust{gap:5px;padding:10px 4px}.time-quick button{font-size:10px}}
+
+
+/* Compact report search: moss palette */
+.report-search{margin:0 0 14px;padding:13px;border:1px solid #526b43;border-radius:16px;background:linear-gradient(135deg,#2c4328,#223522);box-shadow:inset 0 1px #ffffff08}
+.search-project-wrap{display:flex;align-items:center;gap:9px;border:1px solid #536d45;background:#1b2b1b;border-radius:12px;padding:0 11px;margin-bottom:9px}
+.search-project-wrap span{color:#d2bd82;font-size:25px;line-height:1}
+.search-project-wrap input{flex:1;min-width:0;width:100%;border:0!important;outline:none;background:transparent!important;box-shadow:none!important;color:#f1f5e9!important;padding:13px 0;font-size:13px}
+.search-project-wrap input::placeholder,.search-date-wrap input::placeholder{color:#aab99c;opacity:1}
+.search-date-wrap{display:flex;gap:8px;align-items:stretch}
+.search-date-wrap input{flex:1;min-width:0;width:100%;background:#1b2b1b!important;color:#f1f5e9!important;border:1px solid #536d45!important;border-radius:11px;padding:11px 12px;font-size:12px;outline:none}
+.search-date-wrap input:focus,.search-project-wrap:focus-within{border-color:#d0b477!important;box-shadow:0 0 0 3px #d0b47718}
+.search-date-wrap button{white-space:nowrap;padding:10px 12px;font-size:12px;background:#d4c18f;color:#263a20;border:0}
+.search-date-wrap button:hover{background:#e4d3a5}
+#searchSummary{padding:9px 2px 0;color:#c1d0b4;line-height:1.7}
+@media(max-width:420px){.search-date-wrap{flex-direction:column}.search-date-wrap button{width:100%}}
+
+
+/* Focused app layout v2 */
+.wrap{max-width:1000px;margin:20px auto;padding:0 15px 44px}
+.notice{font-size:12px;line-height:1.8;padding:10px 14px;border-radius:12px;margin-bottom:14px}
+.profile-card{padding:14px 16px;border-radius:15px}
+.profile-card .field input{min-height:42px}
+.stats{gap:10px;margin-bottom:16px}
+.stat{padding:15px 16px;border-radius:15px}
+.stat strong{font-size:23px;margin-top:7px}
+.app-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:6px;margin:0 0 14px;background:#202f1e;border:1px solid #425a36;border-radius:15px;box-shadow:0 8px 24px #080e0730;position:sticky;top:5px;z-index:20}
+.nav-item{min-width:0;display:flex;justify-content:center;align-items:center;gap:7px;min-height:46px;padding:9px 6px;border:1px solid transparent;border-radius:10px;background:transparent;color:#d1dec6;font-weight:700;font-size:12px;white-space:nowrap}
+.nav-item.active{background:#e6eddc;color:#2b4224;border-color:#d4e0c8;box-shadow:0 3px 8px #0002}
+.layout{display:block}
+.layout>.card{margin-bottom:14px}
+.app-section{animation:sectionIn .16s ease-out}
+.view-hidden{display:none!important}
+#entrySection{max-width:760px;margin-inline:auto}
+#entrySection h2,#reportsSection h2,#backupSection h2{font-size:17px;margin-bottom:16px}
+#entrySection .field{margin-bottom:13px}
+#entrySection .actions .btn{min-height:45px}
+#reportsSection{max-width:900px;margin-inline:auto}
+#backupSection{max-width:760px;margin-inline:auto}
+.search-tools{padding:12px;border-radius:13px;background:#1c2d1c;border:1px solid #405a35}
+.search-project-wrap{border:1px solid #4a6340;background:#243824;border-radius:11px}
+.search-project-wrap input,.search-date-wrap input{background:transparent;color:#edf4e7;border:0}
+.search-date-wrap{margin-top:8px}
+#searchSummary{padding:8px 2px}
+body{background:radial-gradient(ellipse at 85% 0%,#31492b 0,transparent 35%),#172317}
+@media(max-width:520px){
+ .wrap{margin:12px auto;padding:0 10px 32px}
+ .notice{font-size:11px;padding:9px 11px}
+ .profile-card{padding:12px}
+ .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .stat{padding:11px 8px;border-radius:12px}
+ .stat span{font-size:10px;line-height:1.5;display:block}
+ .stat strong{font-size:16px;overflow-wrap:anywhere}
+ .app-nav{gap:4px;padding:4px;border-radius:13px}
+ .nav-item{flex-direction:column;gap:3px;min-height:53px;font-size:10px;padding:6px 2px;white-space:normal}
+ .row{gap:8px}
+ #entrySection{padding:15px 12px}
+ #entrySection .row{grid-template-columns:1fr 1fr}
+}
+
+
+/* FGC native-style three-action home */
+.home-screen{max-width:760px;margin:18px auto 0;animation:sectionIn .2s ease-out}
+.home-intro{padding:14px 4px 18px}.home-eyebrow{display:inline-block;color:#b89b60;font-size:10px;letter-spacing:2px;font-weight:800;margin-bottom:10px}
+.home-intro h2{font-size:24px;line-height:1.5;margin:0 0 5px;color:#343e2e}.home-intro p{font-size:13px;color:#777b6e;margin:0}
+.home-actions{display:grid;gap:12px}.home-action{width:100%;display:flex;align-items:center;gap:14px;text-align:right;padding:17px;border:1px solid #d9d9cc;border-radius:18px;background:linear-gradient(140deg,#fbfaf5,#f0f0e7);color:#30382b;box-shadow:0 8px 24px #252c1e0b;transition:transform .16s,border-color .16s,box-shadow .16s}
+.home-action:hover{transform:translateY(-2px);border-color:#aab99a;box-shadow:0 12px 26px #252c1e13}.home-action.primary-action{background:linear-gradient(120deg,#3d5033,#293b27);border-color:#586e4b;color:#fff}
+.home-action-icon{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;border-radius:16px;background:#e1e6d8;color:#405636;font-size:28px}
+.home-action-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px}.home-action-copy strong{font-size:15px}.home-action-copy small{font-size:11px;line-height:1.7;color:#777f6c}
+.primary-action .home-action-copy small{color:#d8e2cf}.home-arrow{font-size:27px;color:#8a987d}.home-footnote{text-align:center;font-size:11px;color:#858b7b;padding:23px 10px 12px}
+.back-home{display:inline-flex;align-items:center;gap:7px;margin:0 0 16px;padding:8px 12px;border:1px solid #d9d9cc;border-radius:10px;background:#efefe6;color:#485640;font-size:12px;font-weight:700}
+.section-heading-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.section-heading-row h2{margin-bottom:8px!important}.small-action{font-size:11px;padding:9px 10px}
+#searchSection{max-width:900px;margin:0 auto 14px}#searchSection .report-search{background:#f0f0e7;border-color:#d8dacd;box-shadow:none}
+#searchSection .search-project-wrap{background:#faf9f3;border-color:#d8dacd}#searchSection .search-project-wrap input{color:#292e25!important}
+#searchSection .search-project-wrap input::placeholder{color:#8a8f81}#searchSection .search-date-wrap input{background:#faf9f3!important;color:#292e25!important;border-color:#d8dacd!important}
+#searchSection #searchSummary{color:#727b68}#myReportsList .report{margin-top:12px}
+@keyframes sectionIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.home-screen{margin-top:8px}.home-intro{padding:13px 4px 16px}.home-intro h2{font-size:21px}.home-actions{gap:10px}.home-action{padding:14px 12px;border-radius:16px;gap:11px}.home-action-icon{flex-basis:45px;width:45px;height:45px;border-radius:14px;font-size:25px}.home-action-copy strong{font-size:14px}.home-action-copy small{font-size:10px}.section-heading-row{align-items:flex-start}}
+.global-home-button{position:fixed;z-index:1000;bottom:calc(16px + env(safe-area-inset-bottom));right:16px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:1px solid #d4c18d;border-radius:999px;background:linear-gradient(135deg,#304a27,#52763b);color:#fff;font-weight:700;font-size:13px;box-shadow:0 8px 24px #08130770;cursor:pointer}.global-home-button:hover{background:linear-gradient(135deg,#3d5b30,#638748)}.global-home-button.hidden{display:none!important}@media(min-width:761px){.global-home-button{right:max(22px,calc((100vw - 1120px)/2));bottom:24px}}\n
+/* Compact, scannable report cards */
+.compact-report{padding:13px!important;margin:10px 0!important;border-radius:15px!important;background:linear-gradient(145deg,#293e27,#213321)!important;border:1px solid #425b39!important;box-shadow:0 5px 15px #0710072b!important;color:#eff5e9}
+.compact-report-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.compact-date{font-size:13px;font-weight:800;color:#e3d19a}
+.compact-owner{max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#354c2d!important;color:#e4efd9!important;border-color:#4b6740!important}
+.compact-project{display:flex;align-items:baseline;gap:8px;padding:0 0 10px;color:#b9cba9;font-size:11px}
+
+/* خوانایی سراسری کارت گزارش‌ها و متن‌های کم‌رنگ */
+.compact-project{color:#53634b!important;font-size:12px!important;font-weight:700}
+.compact-project span{color:#53634b!important}
+.compact-project strong{color:#263b20!important;font-weight:800}
+.compact-date{color:#8a6b27!important;font-weight:800}
+.report-description{color:#34452e!important}
+.report-description summary{color:#8a6b27!important;font-weight:800}
+.report-description p{color:#34452e!important;font-weight:500}
+.report-photo-link{color:#536d3e!important;font-weight:700}
+.compact-report .report-metric span,.compact-report .report-metric label{color:#d0dac6!important}
+.compact-report .report-metric strong{color:#f5f6ee!important}
+.compact-report .money-metric strong{color:#f0d98f!important}
+.compact-report .compact-owner{color:#f3f5eb!important}
+.compact-report .muted,.compact-report .section-kicker{color:#53634b!important;opacity:1!important}
+
+.compact-project strong{color:#eef4e7;font-size:13px;overflow-wrap:anywhere}
+.report-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.report-metric{min-width:0;border:1px solid #40583a;border-radius:10px;background:#1f3020;padding:9px 7px;display:flex;flex-direction:column;gap:5px}
+.report-metric span{font-size:10px;color:#aabd9b}
+.report-metric strong{font-size:12px;color:#f1f4e9;overflow-wrap:anywhere;line-height:1.6}
+.money-metric strong{color:#e1ce91;font-size:11px}
+.report-description{margin-top:10px;border-top:1px solid #40563a;padding-top:9px;color:#dbe7d1;font-size:12px}
+.report-description summary{cursor:pointer;color:#d5c18a;font-weight:700;outline:none}
+.report-description p{margin:8px 0 0;white-space:pre-wrap;line-height:1.9;font-size:12px;overflow-wrap:anywhere}
+.report-photo-link{display:flex;align-items:center;gap:10px;margin-top:10px;color:#d7c58f;font-size:11px;text-decoration:none}
+.compact-photo{width:56px;height:48px;object-fit:cover;border-radius:9px;border:1px solid #52684a}
+.compact-actions{display:flex;gap:8px;justify-content:flex-start;margin-top:11px;padding-top:10px;border-top:1px solid #3a5233}
+.compact-actions .btn{padding:8px 13px;font-size:11px}
+.report-calendar-section{max-width:780px;margin:0 auto 16px}
+.report-calendar{padding:15px;border:1px solid #405a36;border-radius:17px;background:linear-gradient(145deg,#293e27,#203120);box-shadow:0 10px 28px #09130945;margin:12px 0 20px}
+.report-calendar .calendar-head{margin-bottom:15px}
+.report-calendar .calendar-head strong{color:#e7d59e}
+.report-calendar .calendar-weekdays{color:#bdcdaf}
+.report-calendar-days{gap:5px}
+.report-calendar-days button{min-height:54px;border:1px solid #3c5434;background:#243723;color:#edf3e7;border-radius:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 1px}
+.report-calendar-days button:hover{background:#354d2e;border-color:#77965d}
+.report-calendar-days button.today{border-color:#d0b477;background:#35472d}
+.report-calendar-days button.selected{background:linear-gradient(135deg,#55763d,#314b29);border-color:#d8c17e;color:#fff;box-shadow:0 4px 12px #0a130a60}
+.report-calendar-days button.has-reports:not(.selected){background:#30462b;border-color:#678453}
+.report-cal-day-num{font-size:13px;font-weight:800}
+.report-cal-day-count{font-size:9px;line-height:1.2;color:#e2ce91}
+.report-cal-day-empty{height:11px}
+.calendar-legend-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#d5bf7c;margin-left:5px}
+
+/* تقویم گزارش: افزایش کنتراست و خوانایی متن‌ها */
+.report-calendar-section .section-kicker{color:#53634b!important;opacity:1!important}
+.report-calendar .calendar-head button{color:#f5f6ee!important;font-weight:800}
+.report-calendar .calendar-head strong{color:#f3dfa1!important;font-size:15px}
+.report-calendar .calendar-weekdays{color:#edf2e5!important;font-weight:800}
+.report-calendar-days button{color:#f7f8f2!important}
+.report-calendar-days button.has-reports:not(.selected){color:#ffffff!important;background:#304b2a;border-color:#91ad72}
+.report-calendar-days button.today .report-cal-day-num{color:#fff!important}
+.report-calendar-days button.selected .report-cal-day-num{color:#fff!important}
+.report-cal-day-count{color:#ffe6a1!important;font-size:10px;font-weight:800}
+.calendar-legend-dot{background:#f0d68c}
+.selected-day-heading h3{color:#8a6b20!important}
+#selectedReportSummary{color:#53634b!important;opacity:1!important}
+#selectedDayReports{color:var(--text,#263321)}
+#selectedDayReports .muted,#selectedDayReports .empty-state{color:#53634b!important;opacity:1!important}
+
+.selected-day-heading{margin-top:10px}
+.selected-day-heading h3{font-size:14px;color:#e3d19a;margin:0 0 8px}
+.report-calendar-section .section-heading-row h2{margin:0 0 7px!important}
+@media(max-width:520px){.compact-report{padding:11px!important}.report-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.report-metric{padding:8px}.report-calendar{padding:10px}.report-calendar-days{gap:3px}.report-calendar-days button{min-height:47px;border-radius:9px}.report-cal-day-num{font-size:12px}.compact-actions .btn{flex:1}.compact-owner{max-width:55%}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand"><div class="mark">FGC</div><div><h1>گزارش کار روزانه</h1><p>Fared Group Company</p></div></div><div class="tag">FORWARD TO A BETTER TOMORROW</div></header>
+<button type="button" id="globalHomeButton" class="global-home-button hidden" data-view="home" aria-label="بازگشت به صفحه اصلی">⌂ <span>صفحه اصلی</span></button>
+<main class="wrap">
+
+<section id="appView">
+
+
+<section id="homeSection" class="home-screen app-section">
+<div class="home-intro"><span class="home-eyebrow">FGC WORKSPACE</span><h2>خوش اومدی</h2><p>برای ادامه یکی از بخش‌ها رو انتخاب کن.</p></div>
+<div class="home-actions">
+<button type="button" class="home-action primary-action" data-view="entry"><span class="home-action-icon">＋</span><span class="home-action-copy"><strong>ثبت گزارش جدید</strong><small>ثبت ساعت کار، واریزی و توضیحات</small></span><span class="home-arrow">‹</span></button>
+<button type="button" class="home-action" data-view="reports"><span class="home-action-icon">▤</span><span class="home-action-copy"><strong>گزارش‌های من</strong><small>مشاهده و ویرایش گزارش‌های قبلی</small></span><span class="home-arrow">‹</span></button>
+<button type="button" class="home-action" data-view="reportCalendar"><span class="home-action-icon">▦</span><span class="home-action-copy"><strong>تقویم گزارش</strong><small>انتخاب یک روز و دیدن گزارش‌های همان تاریخ</small></span><span class="home-arrow">‹</span></button>
+<button type="button" class="home-action" data-view="search"><span class="home-action-icon">⌕</span><span class="home-action-copy"><strong>جست‌وجو</strong><small>پیدا کردن گزارش بر اساس تاریخ و پروژه</small></span><span class="home-arrow">‹</span></button>
+</div><div class="home-footnote">FGC • گزارش روزانه، ساده و مرتب</div></section>
+<section id="reportCalendarSection" class="card app-section view-hidden report-calendar-section">
+<button type="button" class="back-home" data-view="home">‹ صفحه اصلی</button>
+<div class="section-heading-row"><div><h2>تقویم گزارش</h2><p class="section-kicker">روزهای دارای گزارش با نشان مشخص شده‌اند.</p></div><button type="button" class="btn secondary small-action" id="reportCalToday">امروز</button></div>
+<div class="report-calendar"><div class="calendar-head"><button type="button" class="btn secondary" id="reportCalPrev" aria-label="ماه قبل">›</button><strong id="reportCalTitle">تقویم شمسی</strong><button type="button" class="btn secondary" id="reportCalNext" aria-label="ماه بعد">‹</button></div>
+<div class="calendar-weekdays"><span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span></div>
+<div class="calendar-days report-calendar-days" id="reportCalendarDays"></div>
+<div class="calendar-foot"><span class="muted"><i class="calendar-legend-dot"></i> روز دارای گزارش</span><span class="muted" id="reportCalendarCount">۰ گزارش</span></div></div>
+<div class="selected-day-heading"><h3 id="selectedReportDate">گزارش‌های روز انتخاب‌شده</h3><p class="section-kicker" id="selectedReportSummary">برای دیدن گزارش‌ها یک روز را انتخاب کن.</p></div><div id="selectedDayReports"></div>
+</section>
+<div class="layout"><section id="entrySection" class="card app-section view-hidden"><button type="button" class="back-home" data-view="home">‹ صفحه اصلی</button><div id="profileSection" class="card profile-card" style="margin-bottom:16px"><div class="row" style="align-items:end"><div class="field" style="margin:0"><label for="workerName">نام شما (روی همین دستگاه ذخیره می‌شود)</label><input id="workerName" placeholder="مثلاً علی رضایی" maxlength="70"></div><div class="field" style="margin:0"><button id="saveNameBtn" class="btn">ذخیره نام</button></div></div><p class="muted" id="nameMessage">نام خود را وارد کنید تا در گزارش‌ها مشخص باشد.</p></div><h2 id="formTitle">ثبت گزارش روزانه</h2>
+<div class="field"><label>تاریخ گزارش</label><div class="datebar"><button class="btn secondary" id="prevDay" type="button" aria-label="روز قبل">‹ روز قبل</button><input type="text" id="reportDate" inputmode="numeric" placeholder="۱۴۰۵/۰۷/۲۳" aria-label="تاریخ شمسی" autocomplete="off"><button class="btn secondary" id="openCalendar" type="button">📅 تقویم</button><button class="btn secondary" id="nextDay" type="button" aria-label="روز بعد">روز بعد ›</button></div><div class="calendar hidden" id="calendarPanel"><div class="calendar-head"><button class="btn secondary" id="calPrev" type="button" aria-label="ماه قبل">‹</button><strong id="calTitle">تقویم شمسی</strong><button class="btn secondary" id="calNext" type="button" aria-label="ماه بعد">›</button></div><div class="calendar-weekdays"><span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span></div><div class="calendar-days" id="calendarDays"></div><div class="calendar-foot"><button class="btn secondary" id="calToday" type="button">رفتن به امروز</button><span class="muted">تاریخ شمسی</span></div></div><div class="muted date-hint" id="jalaliDate">تاریخ امروز به‌صورت خودکار انتخاب می‌شود</div></div>
+<div class="row"><div class="field"><label>ساعت ورود</label><div class="time-entry" data-time="clockIn"><button class="time-display" id="clockInDisplay" type="button" aria-label="انتخاب ساعت ورود"><span class="time-icon">◷</span><span class="time-copy"><small>ساعت ورود</small><strong id="clockInShown">--:--</strong><em>برای انتخاب لمس کن</em></span><span class="time-chevron">⌄</span></button><div class="time-panel hidden" id="clockInPanel"><div class="time-panel-head"><span>تنظیم ساعت ورود</span><span class="clock-badge">◷</span></div><div class="time-big" id="clockInPreview">--:--</div><div class="time-adjust"><div class="time-wheel"><button type="button" data-time-step="clockInHour" data-step="-1" aria-label="ساعت کمتر">−</button><strong id="clockInHourText">--</strong><button type="button" data-time-step="clockInHour" data-step="1" aria-label="ساعت بیشتر">+</button><small>ساعت</small></div><b class="time-colon">:</b><div class="time-wheel"><button type="button" data-time-step="clockInMinute" data-step="-1" aria-label="دقیقه کمتر">−</button><strong id="clockInMinuteText">--</strong><button type="button" data-time-step="clockInMinute" data-step="1" aria-label="دقیقه بیشتر">+</button><small>دقیقه</small></div></div><div class="time-quick"><button type="button" data-time-quick="clockIn" data-value="08:00">۸ صبح</button><button type="button" data-time-quick="clockIn" data-value="12:00">۱۲ ظهر</button><button type="button" data-time-quick="clockIn" data-value="16:00">۴ عصر</button></div><button class="time-confirm" type="button" data-time-confirm="clockIn">تأیید ساعت ورود</button></div></div><input id="clockIn" type="hidden"></div><div class="field"><label>ساعت خروج</label><div class="time-entry" data-time="clockOut"><button class="time-display" id="clockOutDisplay" type="button" aria-label="انتخاب ساعت خروج"><span class="time-icon out">◴</span><span class="time-copy"><small>ساعت خروج</small><strong id="clockOutShown">--:--</strong><em>برای انتخاب لمس کن</em></span><span class="time-chevron">⌄</span></button><div class="time-panel hidden" id="clockOutPanel"><div class="time-panel-head"><span>تنظیم ساعت خروج</span><span class="clock-badge out">◴</span></div><div class="time-big" id="clockOutPreview">--:--</div><div class="time-adjust"><div class="time-wheel"><button type="button" data-time-step="clockOutHour" data-step="-1" aria-label="ساعت کمتر">−</button><strong id="clockOutHourText">--</strong><button type="button" data-time-step="clockOutHour" data-step="1" aria-label="ساعت بیشتر">+</button><small>ساعت</small></div><b class="time-colon">:</b><div class="time-wheel"><button type="button" data-time-step="clockOutMinute" data-step="-1" aria-label="دقیقه کمتر">−</button><strong id="clockOutMinuteText">--</strong><button type="button" data-time-step="clockOutMinute" data-step="1" aria-label="دقیقه بیشتر">+</button><small>دقیقه</small></div></div><div class="time-quick"><button type="button" data-time-quick="clockOut" data-value="12:00">۱۲ ظهر</button><button type="button" data-time-quick="clockOut" data-value="17:00">۵ عصر</button><button type="button" data-time-quick="clockOut" data-value="20:00">۸ شب</button></div><button class="time-confirm" type="button" data-time-confirm="clockOut">تأیید ساعت خروج</button></div></div><input id="clockOut" type="hidden"></div></div>
+<div class="field"><label>واریزی دریافتی (تومان)</label><input id="money" type="number" min="0" inputmode="numeric" placeholder="مثلاً ۵۰۰۰۰۰"></div>
+<div class="field"><label>نام پروژه</label><select id="projectName"><option value="">انتخاب پروژه</option><option value="شرافت">شرافت</option><option value="شاهین شهر">شاهین شهر</option><option value="فولاد شهر">فولاد شهر</option><option value="جهاندار">جهاندار</option><option value="انصاری">انصاری</option></select></div>
+<div class="field"><label>شرح کار و توضیحات</label><textarea id="description" placeholder="کارهای انجام‌شده، محل پروژه و نکات لازم..."></textarea></div>
+<div class="field"><label>عکس گزارش (اختیاری)</label><input id="photo" type="file" accept="image/*"><div class="muted">عکس‌ها کوچک‌سازی می‌شوند تا فضای کمتری اشغال کنند.</div><img id="photoPreview" class="photo hidden" alt="پیش‌نمایش عکس"></div>
+<div class="actions"><button id="saveBtn" class="btn">ذخیره گزارش</button><button id="cancelEdit" class="btn secondary hidden">لغو ویرایش</button><button id="clearForm" class="btn secondary">پاک کردن فرم</button></div><p id="saveMessage" class="muted"></p></section>
+<aside id="reportsSection" class="card reports-card app-section view-hidden"><button type="button" class="back-home" data-view="home">‹ صفحه اصلی</button><div class="section-heading-row"><div><h2>گزارش‌های من</h2><p class="section-kicker">همه گزارش‌های ذخیره‌شده روی همین دستگاه</p></div><button type="button" class="btn secondary small-action" data-view="backup">پشتیبان</button></div><div id="statsSection" class="stats"><div class="stat"><span>مجموع ساعت کار ثبت‌شده</span><strong id="totalHours">۰ ساعت</strong></div><div class="stat"><span>مجموع واریزی‌ها</span><strong id="totalMoney">۰ تومان</strong></div><div class="stat"><span>تعداد گزارش‌ها</span><strong id="totalReports">۰</strong></div></div><div id="myReportsList"></div></aside><section id="searchSection" class="card app-section view-hidden"><button type="button" class="back-home" data-view="home">‹ صفحه اصلی</button><h2>جست‌وجوی گزارش‌ها</h2><p class="section-kicker">جست‌وجو بر اساس پروژه، توضیحات، همکار یا تاریخ</p><div class="report-search search-tools"><div class="search-project-wrap"><span aria-hidden="true">⌕</span><input id="searchProject" type="search" placeholder="جست‌وجو بر اساس نام پروژه یا توضیحات..." aria-label="جست‌وجو بر اساس پروژه یا توضیحات"></div><div class="search-project-wrap"><span aria-hidden="true">♙</span><input id="searchName" type="search" placeholder="جست‌وجو بر اساس نام همکار؛ مثل مهران یا مهرشاد..." aria-label="جست‌وجو بر اساس نام همکار"></div><div class="search-date-wrap"><input id="filterDate" type="text" inputmode="numeric" placeholder="فیلتر تاریخ شمسی؛ مثل ۱۴۰۵/۰۷/۲۳" aria-label="فیلتر بر اساس تاریخ شمسی"><button id="clearFilters" type="button" class="btn secondary">پاک کردن</button></div><div class="muted" id="searchSummary">همه گزارش‌ها</div></div><div id="searchResults"></div></section></div>
+<div id="backupSection" class="card app-section view-hidden"><button type="button" class="back-home" data-view="home">‹ صفحه اصلی</button><div class="notice"><b>نسخه بدون حساب کاربری</b> — هر همکار می‌تواند همین لینک را در گوشی خودش باز کند و بدون نام کاربری و رمز، گزارش‌های خودش را ثبت کند. اطلاعات فقط در همان گوشی و مرورگر ذخیره می‌شود و با گوشی شما یا همکاران دیگر مشترک نیست. پاک‌کردن اطلاعات مرورگر یا عوض‌کردن دستگاه ممکن است گزارش‌ها را از بین ببرد؛ پس از نسخه پشتیبان استفاده کنید.</div><h2>نسخه پشتیبان اطلاعات این دستگاه</h2><p class="muted">فایل پشتیبان به گزارش‌های موجود اضافه می‌شود؛ گزارش‌های فعلی پاک یا جایگزین نمی‌شوند. موارد تکراری نادیده گرفته می‌شوند.</p><div class="actions"><button id="exportBtn" class="btn secondary">دانلود نسخه پشتیبان</button><label class="btn secondary" for="importFile">افزودن فایل پشتیبان</label><input id="importFile" type="file" accept="application/json,.json" class="hidden"><button id="pdfBtn" class="btn">خروجی PDF گزارش‌ها</button></div><p class="muted" id="backupMessage" aria-live="polite"></p></div>
+</section><div class="foot">FGC • سامانه ثبت گزارش روزانه</div></main>
+<script>
+
+const $=id=>document.getElementById(id);
+const storeKey='fgc_reports_nologin_v1', nameKey='fgc_local_name_v1';
+let editingId=null,photoData='',calendarYear=0,calendarMonth=0;
+const faNum=n=>new Intl.NumberFormat('fa-IR').format(n);
+const moneyFmt=n=>new Intl.NumberFormat('fa-IR').format(n||0)+' تومان';
+const dateObj=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d,12)};
+function todayISO(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function jalaliParts(iso){const p=new Intl.DateTimeFormat('en-US-u-ca-persian',{year:'numeric',month:'numeric',day:'numeric'}).formatToParts(dateObj(iso));const o={};p.forEach(x=>{if(x.type==='year'||x.type==='month'||x.type==='day')o[x.type]=Number(x.value)});return o}
+function jalaliText(iso){if(!iso)return '';const p=jalaliParts(iso);return String(p.year)+'/'+String(p.month).padStart(2,'0')+'/'+String(p.day).padStart(2,'0')}
+function normalizeDigits(s){return String(s||'').replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[.\-]/g,'/').trim()}
+function parseJalaliText(value){const m=normalizeDigits(value).match(/^(\d{4})\/(\d{1,2})\/(\d{1,2})$/);if(!m)return null;const y=+m[1],mo=+m[2],d=+m[3];if(y<1300||y>1500||mo<1||mo>12||d<1||d>31)return null;const start=new Date(y+620,0,1,12);for(let delta=0;delta<740;delta++){const x=new Date(start);x.setDate(x.getDate()+delta);const iso=x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0');const p=jalaliParts(iso);if(p.year===y&&p.month===mo&&p.day===d)return iso}return null}
+function setJalaliInput(id,iso){$(id).value=jalaliText(iso);$(id).dataset.iso=iso||''}
+function readJalaliInput(id,required=false){const el=$(id),v=el.value.trim();if(!v){el.setCustomValidity(required?'تاریخ شمسی را وارد کنید.':'');el.dataset.iso='';return required?null:''}const iso=parseJalaliText(v);el.setCustomValidity(iso?'':'تاریخ شمسی معتبر وارد کنید؛ نمونه: ۱۴۰۵/۰۷/۲۳');el.dataset.iso=iso||'';return iso}
+function jalali(s){if(!s)return '';return new Intl.DateTimeFormat('fa-IR-u-ca-persian',{year:'numeric',month:'long',day:'numeric'}).format(dateObj(s))}
+function getReports(){try{const v=JSON.parse(localStorage.getItem(storeKey)||'[]');return Array.isArray(v)?v:[]}catch{return []}}
+function setReports(a){localStorage.setItem(storeKey,JSON.stringify(a))}
+function calcHours(a,b){if(!a||!b)return 0;let [ah,am]=a.split(':').map(Number),[bh,bm]=b.split(':').map(Number);let mins=bh*60+bm-(ah*60+am);if(mins<0)mins+=1440;return Math.round(mins/60*100)/100}
+function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+let activeView='home';
+function switchView(view){
+ const homeButton=$('globalHomeButton');if(homeButton)homeButton.classList.toggle('hidden',view==='home');
+ const target={home:'homeSection',entry:'entrySection',search:'searchSection',reports:'reportsSection',reportCalendar:'reportCalendarSection',backup:'backupSection'}[view]||'homeSection';
+ activeView=view;
+ document.querySelectorAll('.app-section').forEach(el=>el.classList.toggle('view-hidden',el.id!==target));
+ $('profileSection').classList.toggle('view-hidden',view!=='entry');
+ $('statsSection').classList.toggle('view-hidden',view!=='reports');
+ if(view==='search'){renderReports();window.setTimeout(()=>$('searchProject').focus({preventScroll:true}),80)}
+ else if(view==='reports')renderReports();
+ else if(view==='reportCalendar')renderReportCalendar();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function init(){
+ const today=todayISO();setJalaliInput('reportDate',today);$('workerName').value=localStorage.getItem(nameKey)||'';initTimePickers();updateDateLabel();
+ $('reportDate').addEventListener('change',()=>{const iso=readJalaliInput('reportDate',true);if(!iso){$('saveMessage').textContent='تاریخ شمسی معتبر وارد کن؛ نمونه: ۱۴۰۵/۰۷/۲۳';updateDateLabel();return}updateDateLabel();loadDateReport()});
+ $('prevDay').onclick=()=>shiftDate(-1);$('nextDay').onclick=()=>shiftDate(1);
+ $('openCalendar').onclick=()=>{const iso=readJalaliInput('reportDate')||todayISO(),p=jalaliParts(iso);calendarYear=p.year;calendarMonth=p.month;$('calendarPanel').classList.toggle('hidden');renderCalendar()};
+ $('calPrev').onclick=()=>moveCalendar(-1);$('calNext').onclick=()=>moveCalendar(1);$('calToday').onclick=()=>chooseDate(todayISO());
+ $('saveBtn').onclick=saveReport;$('clearForm').onclick=clearForm;document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>switchView(btn.dataset.view)));
+ $('reportCalPrev').onclick=()=>moveReportCalendar(-1);$('reportCalNext').onclick=()=>moveReportCalendar(1);$('reportCalToday').onclick=openReportCalendarToday;
+ $('cancelEdit').onclick=()=>{clearForm();$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden')};
+$('photo').onchange=handlePhoto;
+ $('saveNameBtn').onclick=()=>{const n=$('workerName').value.trim();if(!n){$('nameMessage').textContent='لطفاً نام خود را وارد کنید.';return}localStorage.setItem(nameKey,n);$('nameMessage').textContent='نام شما روی همین دستگاه ذخیره شد.';renderAll();loadDateReport()};
+ $('exportBtn').onclick=exportBackup;$('importFile').onchange=importBackup;$('pdfBtn').onclick=exportReportsPDF;
+ $('searchProject').addEventListener('input',renderReports);$('searchName').addEventListener('input',renderReports);$('filterDate').addEventListener('input',renderReports);$('clearFilters').onclick=()=>{$('searchProject').value='';$('searchName').value='';$('filterDate').value='';renderReports()};
+ renderAll();loadDateReport();switchView("home");
+}
+const timeDraft={clockIn:{h:8,m:0},clockOut:{h:17,m:0}};
+function paintTimePicker(id){const t=timeDraft[id],hh=String(t.h).padStart(2,'0'),mm=String(t.m).padStart(2,'0'),v=hh+':'+mm;$(id+'Shown').textContent=$(id).value||'--:--';$(id+'Preview').textContent=v;$(id+'HourText').textContent=faNum(hh);$(id+'MinuteText').textContent=faNum(mm)}
+function initTimePickers(){['clockIn','clockOut'].forEach(id=>{setTimePicker(id,'');$(id+'Display').onclick=()=>{const panel=$(id+'Panel');document.querySelectorAll('.time-panel').forEach(p=>{if(p!==panel)p.classList.add('hidden')});panel.classList.toggle('hidden');paintTimePicker(id)};$(id+'Panel').querySelectorAll('[data-time-step]').forEach(btn=>btn.onclick=()=>{const part=btn.dataset.timeStep.endsWith('Hour')?'h':'m',step=Number(btn.dataset.step),t=timeDraft[id];t[part]=(t[part]+step+(part==='h'?24:60))%(part==='h'?24:60);paintTimePicker(id)});$(id+'Panel').querySelectorAll('[data-time-quick]').forEach(btn=>btn.onclick=()=>{const [h,m]=btn.dataset.value.split(':').map(Number);timeDraft[id]={h,m};paintTimePicker(id)});$(id+'Panel').querySelector('[data-time-confirm]').onclick=()=>{const t=timeDraft[id];$(id).value=String(t.h).padStart(2,'0')+':'+String(t.m).padStart(2,'0');paintTimePicker(id);$(id+'Panel').classList.add('hidden')};});}
+function setTimePicker(id,value){if(!$(id))return;if(!value){timeDraft[id]={h:id==='clockIn'?8:17,m:0};$(id).value='';}else{const [hh,mm]=value.split(':').map(Number);timeDraft[id]={h:hh,m:mm};$(id).value=String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0')}if($(id+'Shown')){const shown=$(id).value||'--:--';$(id+'Shown').textContent=shown;$(id+'Preview').textContent=shown;$(id+'HourText').textContent=$(id).value?faNum(String(timeDraft[id].h).padStart(2,'0')):'--';$(id+'MinuteText').textContent=$(id).value?faNum(String(timeDraft[id].m).padStart(2,'0')):'--';}}
+function shiftDate(n){const current=readJalaliInput('reportDate',true)||todayISO(),d=dateObj(current);d.setDate(d.getDate()+n);const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');setJalaliInput('reportDate',iso);updateDateLabel();loadDateReport()}
+function updateDateLabel(){const iso=readJalaliInput('reportDate');$('jalaliDate').textContent=iso?'تاریخ انتخاب‌شده: '+jalali(iso):'تاریخ شمسی را به شکل ۱۴۰۵/۰۷/۲۳ وارد کنید.'}
+function moveCalendar(n){calendarMonth+=n;if(calendarMonth<1){calendarMonth=12;calendarYear--}if(calendarMonth>12){calendarMonth=1;calendarYear++}renderCalendar()}
+function renderCalendar(){
+ 
+ const dates=[];let start=new Date(calendarYear+620,0,1,12);
+ for(let i=0;i<740;i++){const d=new Date(start);d.setDate(d.getDate()+i);const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');const p=jalaliParts(iso);if(p.year===calendarYear&&p.month===calendarMonth)dates.push({iso,day:p.day,weekday:d.getDay()})}
+ const first=dates[0];if(!first)return;$('calTitle').textContent=new Intl.DateTimeFormat('fa-IR-u-ca-persian',{month:'long',year:'numeric'}).format(dateObj(first.iso));
+ const offset=(first.weekday+1)%7;let out='';for(let i=0;i<offset;i++)out+='<button type="button" class="empty-day" tabindex="-1"></button>';
+ const selected=readJalaliInput('reportDate');
+ dates.forEach(x=>{const cls=[x.iso===todayISO()?'today':'',x.iso===selected?'selected':''].filter(Boolean).join(' ');out+='<button type="button" class="'+cls+'" data-iso="'+x.iso+'" aria-label="'+safe(jalali(x.iso))+'">'+faNum(x.day)+'</button>'});
+ $('calendarDays').innerHTML=out;$('calendarDays').querySelectorAll('button[data-iso]').forEach(b=>b.onclick=()=>chooseDate(b.dataset.iso));
+}
+function chooseDate(iso){setJalaliInput('reportDate',iso);$('calendarPanel').classList.add('hidden');updateDateLabel();loadDateReport()}
+function setProjectValue(value){const el=$('projectName');const v=String(value||'');if(v&&!Array.from(el.options).some(o=>o.value===v)){const opt=document.createElement('option');opt.value=v;opt.textContent=v+' (گزارش قبلی)';el.appendChild(opt)}el.value=v}
+function loadDateReport(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim(),date=readJalaliInput('reportDate');if(!date)return;const r=getReports().find(x=>x.date===date&&x.ownerName===name);clearForm(false);if(r){editingId=r.id;setTimePicker('clockIn',r.clockIn||'');setTimePicker('clockOut',r.clockOut||'');$('money').value=r.money||'';setProjectValue(r.projectName||'');$('description').value=r.description||'';photoData=r.photo||'';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden')}else{$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden')}}
+function clearForm(resetMsg=true){editingId=null;setTimePicker('clockIn','');setTimePicker('clockOut','');$('money').value='';$('projectName').value='';$('description').value='';$('photo').value='';photoData='';$('photoPreview').removeAttribute('src');$('photoPreview').classList.add('hidden');if(resetMsg){$('formTitle').textContent='ثبت گزارش روزانه';$('cancelEdit').classList.add('hidden');$('saveMessage').textContent=''}}
+function handlePhoto(){const file=$('photo').files[0];if(!file)return;if(!file.type.startsWith('image/')){$('saveMessage').textContent='لطفاً یک فایل عکس انتخاب کن.';$('photo').value='';return}if(file.size>8*1024*1024){$('saveMessage').textContent='حجم عکس باید کمتر از ۸ مگابایت باشد.';$('photo').value='';return}const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas'),max=1000,scale=Math.min(1,max/Math.max(img.width,img.height));canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);photoData=canvas.toDataURL('image/jpeg',.68);$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden');$('saveMessage').textContent='عکس آماده است؛ با ذخیره گزارش در همین مرورگر می‌ماند.'};img.onerror=()=>{$('saveMessage').textContent='این عکس باز نشد؛ یک عکس دیگر انتخاب کن.'};img.src=e.target.result};reader.readAsDataURL(file)}
+function saveReport(){
+ const date=readJalaliInput('reportDate',true),name=$('workerName').value.trim();if(!date){$('saveMessage').textContent='تاریخ گزارش را به شکل شمسی وارد یا از تقویم انتخاب کن.';return}if(!name){$('saveMessage').textContent='اول نام خود را بالای صفحه وارد و ذخیره کن.';$('workerName').focus();return}
+ const cin=$('clockIn').value,cout=$('clockOut').value;if((cin&&!cout)||(!cin&&cout)){$('saveMessage').textContent='برای محاسبه ساعت کار، ساعت ورود و خروج را هر دو وارد کن.';return}
+ const arr=getReports(),old=editingId?arr.find(x=>x.id===editingId):arr.find(x=>x.date===date&&x.ownerName===name);
+ const report={id:old?.id||String(Date.now()),date,ownerName:name,clockIn:cin,clockOut:cout,hours:calcHours(cin,cout),money:Math.max(0,Number($('money').value)||0),projectName:$('projectName').value.trim(),description:$('description').value.trim(),photo:photoData||old?.photo||'',updatedAt:new Date().toISOString()};
+ const idx=old?arr.findIndex(x=>x.id===old.id):-1;if(idx>=0)arr[idx]=report;else arr.push(report);
+ try{setReports(arr)}catch(e){$('saveMessage').textContent='ذخیره انجام نشد؛ فضای مرورگر احتمالاً برای عکس‌ها پر شده. عکس را کوچک‌تر کن یا نسخه پشتیبان بگیر.';return}
+ $('saveMessage').textContent='گزارش '+jalali(date)+' ذخیره شد و روی همین مرورگر می‌ماند.';clearForm(false);renderAll();loadDateReport();
+}
+function reportCard(r){return '<article class="report compact-report"><div class="compact-report-top"><div class="compact-date">'+safe(jalali(r.date))+'</div><span class="pill compact-owner">'+safe(r.ownerName||'بدون نام')+'</span></div>'+(r.projectName?'<div class="compact-project"><span>پروژه</span><strong>'+safe(r.projectName)+'</strong></div>':'')+'<div class="report-metrics">'+((r.clockIn||r.clockOut)?'<div class="report-metric"><span>ورود</span><strong>'+safe(r.clockIn||'—')+'</strong></div><div class="report-metric"><span>خروج</span><strong>'+safe(r.clockOut||'—')+'</strong></div><div class="report-metric"><span>مدت کار</span><strong>'+faNum(r.hours||0)+' ساعت</strong></div>':'<div class="report-metric"><span>مدت کار</span><strong>ثبت نشده</strong></div>')+'<div class="report-metric money-metric"><span>واریزی</span><strong>'+moneyFmt(r.money)+'</strong></div></div>'+(r.description?'<details class="report-description"><summary>مشاهده توضیحات</summary><p>'+safe(r.description)+'</p></details>':'')+(r.photo?'<a class="report-photo-link" href="'+r.photo+'" target="_blank" rel="noopener"><img class="compact-photo" src="'+r.photo+'" alt="عکس گزارش"><span>مشاهده عکس</span></a>':'')+'<div class="compact-actions"><button class="btn secondary" onclick="editReport(\''+r.id+'\')">ویرایش</button><button class="btn danger" onclick="deleteReport(\''+r.id+'\')">حذف</button></div></article>'}
+function renderReports(){
+ const name=localStorage.getItem(nameKey)||$('workerName').value.trim();
+ const all=getReports();
+ const ownRows=all.filter(r=>!name||r.ownerName===name).sort((a,b)=>b.date.localeCompare(a.date));
+ const term=normalizeDigits($('searchProject')?.value.trim()||'').toLocaleLowerCase('fa');
+ const nameTerm=normalizeDigits($('searchName')?.value.trim()||'').toLocaleLowerCase('fa');
+ const dateTerm=normalizeDigits($('filterDate')?.value.trim()||'').replace(/[.-]/g,'/');
+ const searching=!!(term||nameTerm||dateTerm);
+ const rows=all.filter(r=>nameTerm||!name||r.ownerName===name).filter(r=>{
+  const project=normalizeDigits(r.projectName||'').toLocaleLowerCase('fa');
+  const desc=normalizeDigits(r.description||'').toLocaleLowerCase('fa');
+  const owner=normalizeDigits(r.ownerName||'').toLocaleLowerCase('fa');
+  const date=normalizeDigits(jalali(r.date)).replace(/[.-]/g,'/');
+  return (!term||project.includes(term)||desc.includes(term))&&(!nameTerm||owner.includes(nameTerm))&&(!dateTerm||date.includes(dateTerm));
+ }).sort((a,b)=>b.date.localeCompare(a.date));
+ if($('searchSummary'))$('searchSummary').textContent=searching?(rows.length?faNum(rows.length)+' گزارش پیدا شد':'برای این جست‌وجو گزارشی پیدا نشد'):'همه گزارش‌ها • '+faNum(rows.length)+' گزارش';
+ if($('searchResults'))$('searchResults').innerHTML=rows.length?rows.map(reportCard).join(''):'<div class="empty">'+(searching?'با این عبارت یا تاریخ گزارشی پیدا نشد.':'برای نمایش گزارش، عبارت یا تاریخ وارد کن.')+'</div>';
+ if($('myReportsList'))$('myReportsList').innerHTML=ownRows.length?ownRows.map(reportCard).join(''):'<div class="empty">هنوز گزارشی برای نمایش وجود ندارد.</div>';
+}
+let reportCalendarYear=0,reportCalendarMonth=0,selectedReportISO=todayISO();
+function moveReportCalendar(n){reportCalendarMonth+=n;if(reportCalendarMonth<1){reportCalendarMonth=12;reportCalendarYear--}if(reportCalendarMonth>12){reportCalendarMonth=1;reportCalendarYear++}renderReportCalendar()}
+function renderReportCalendar(){
+ if(!reportCalendarYear||!reportCalendarMonth){const p=jalaliParts(selectedReportISO||todayISO());reportCalendarYear=p.year;reportCalendarMonth=p.month}
+ const all=getReports(),counts={};all.forEach(r=>{counts[r.date]=(counts[r.date]||0)+1});
+ const start=new Date(reportCalendarYear+620,0,1,12),dates=[];
+ for(let i=0;i<740;i++){const d=new Date(start);d.setDate(d.getDate()+i);const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),p=jalaliParts(iso);if(p.year===reportCalendarYear&&p.month===reportCalendarMonth)dates.push({iso,day:p.day,weekday:d.getDay()})}
+ if(!dates.length)return;
+ $('reportCalTitle').textContent=new Intl.DateTimeFormat('fa-IR-u-ca-persian',{month:'long',year:'numeric'}).format(dateObj(dates[0].iso));
+ let out='';const offset=(dates[0].weekday+1)%7;for(let i=0;i<offset;i++)out+='<button type="button" class="empty-day" tabindex="-1" aria-hidden="true"></button>';
+ dates.forEach(x=>{const count=counts[x.iso]||0,cls=[x.iso===todayISO()?'today':'',x.iso===selectedReportISO?'selected':'',count?'has-reports':''].filter(Boolean).join(' ');out+='<button type="button" class="'+cls+'" data-report-iso="'+x.iso+'" aria-label="'+safe(jalali(x.iso))+(count?'، '+count+' گزارش':'')+'"><span class="report-cal-day-num">'+faNum(x.day)+'</span>'+(count?'<span class="report-cal-day-count">'+faNum(count)+'</span>':'<span class="report-cal-day-empty"></span>')+'</button>'});
+ $('reportCalendarDays').innerHTML=out;$('reportCalendarDays').querySelectorAll('button[data-report-iso]').forEach(b=>b.onclick=()=>{selectedReportISO=b.dataset.reportIso;renderReportCalendar()});
+ const selected=all.filter(r=>r.date===selectedReportISO).sort((a,b)=>(a.ownerName||'').localeCompare(b.ownerName||'','fa'));
+ $('reportCalendarCount').textContent=faNum(all.length)+' گزارش ثبت‌شده';
+ $('selectedReportDate').textContent='گزارش‌های '+jalali(selectedReportISO);
+ $('selectedReportSummary').textContent=selected.length?faNum(selected.length)+' گزارش برای این روز':'برای این روز گزارشی ثبت نشده است';
+ $('selectedDayReports').innerHTML=selected.length?selected.map(reportCard).join(''):'<div class="empty">برای این تاریخ گزارشی وجود ندارد. می‌توانی از بخش «ثبت گزارش جدید» برای این روز گزارش ثبت کنی.</div>';
+}
+function openReportCalendarToday(){const iso=todayISO(),p=jalaliParts(iso);selectedReportISO=iso;reportCalendarYear=p.year;reportCalendarMonth=p.month;renderReportCalendar()}
+function editReport(id){const r=getReports().find(x=>x.id===id);if(!r)return;setJalaliInput('reportDate',r.date);updateDateLabel();editingId=r.id;setTimePicker('clockIn',r.clockIn||'');setTimePicker('clockOut',r.clockOut||'');$('money').value=r.money||'';setProjectValue(r.projectName||'');$('description').value=r.description||'';photoData=r.photo||'';$('photo').value='';if(photoData){$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')}else{$('photoPreview').classList.add('hidden')}$('formTitle').textContent='ویرایش گزارش '+jalali(r.date);$('cancelEdit').classList.remove('hidden');switchView('entry')}
+function deleteReport(id){if(!confirm('این گزارش حذف شود؟'))return;try{setReports(getReports().filter(r=>r.id!==id));renderAll();loadDateReport()}catch(e){alert('حذف گزارش انجام نشد. دوباره تلاش کن.')}}
+function renderAll(){const name=localStorage.getItem(nameKey)||$('workerName').value.trim(),rows=getReports().filter(r=>!name||r.ownerName===name),hours=rows.reduce((s,r)=>s+(Number(r.hours)||0),0),money=rows.reduce((s,r)=>s+(Number(r.money)||0),0);$('totalHours').textContent=faNum(Math.round(hours*100)/100)+' ساعت';$('totalMoney').textContent=moneyFmt(money);$('totalReports').textContent=faNum(rows.length);renderReports()}
+function exportBackup(){const data={app:'FGC-local-backup',version:2,exportedAt:new Date().toISOString(),ownerName:localStorage.getItem(nameKey)||'',reports:getReports()};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='FGC-backup-'+todayISO()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);if($('backupMessage'))$('backupMessage').textContent='نسخه پشتیبان دانلود شد.'}
+function importBackup(e){const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(data.app!=='FGC-local-backup'||!Array.isArray(data.reports))throw new Error('bad');const current=getReports(),seen=new Set(current.map(r=>String(r.id||((r.ownerName||'')+'|'+(r.date||'')))));let added=0,duplicates=0;const merged=current.slice();for(const item of data.reports){if(!item||typeof item!=='object'||!item.date)continue;const key=String(item.id||((item.ownerName||'')+'|'+item.date));if(seen.has(key)){duplicates++;continue}seen.add(key);merged.push(item);added++}setReports(merged);if(!localStorage.getItem(nameKey)&&data.ownerName){localStorage.setItem(nameKey,data.ownerName);$('workerName').value=data.ownerName}$('nameMessage').textContent='اطلاعات فایل به گزارش‌های موجود اضافه شد.';$('backupMessage').textContent=faNum(added)+' گزارش جدید اضافه شد؛ '+faNum(duplicates)+' مورد تکراری نادیده گرفته شد. هیچ گزارش قبلی پاک نشد.';renderAll();loadDateReport()}catch(err){if($('backupMessage'))$('backupMessage').textContent='فایل پشتیبان معتبر نیست یا قابل خواندن نیست.';alert('فایل پشتیبان معتبر نیست یا قابل خواندن نیست.')}finally{$('importFile').value=''}};reader.readAsText(file)}
+function exportReportsPDF(){const owner=localStorage.getItem(nameKey)||$('workerName').value.trim();const rows=getReports().filter(r=>!owner||r.ownerName===owner).sort((a,b)=>b.date.localeCompare(a.date));if(!rows.length){$('backupMessage').textContent='برای خروجی PDF گزارشی ثبت نشده است.';return}const win=window.open('','_blank');if(!win){$('backupMessage').textContent='مرورگر پنجره PDF را مسدود کرد؛ اجازه بازشدن پنجره را بده و دوباره بزن.';return}const esc=s=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));const totalHours=rows.reduce((s,r)=>s+(Number(r.hours)||0),0),totalMoney=rows.reduce((s,r)=>s+(Number(r.money)||0),0);const cards=rows.map((r,i)=>'<article class="report"><div class="report-head"><span class="num">'+faNum(i+1)+'</span><h2>'+esc(jalali(r.date))+'</h2><span class="project">'+esc(r.projectName||'بدون نام پروژه')+'</span></div><div class="details"><div><b>ساعت ورود</b><span>'+esc(r.clockIn||'—')+'</span></div><div><b>ساعت خروج</b><span>'+esc(r.clockOut||'—')+'</span></div><div><b>مدت کار</b><span>'+faNum(Number(r.hours)||0)+' ساعت</span></div><div><b>واریزی</b><span>'+faNum(Number(r.money)||0)+' تومان</span></div></div>'+(r.description?'<div class="desc"><b>توضیحات</b><p>'+esc(r.description).replace(/\n/g,'<br>')+'</p></div>':'')+(r.photo?'<img class="photo" src="'+r.photo+'" alt="عکس گزارش">':'')+'</article>').join('');const html='<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>گزارش کار FGC</title><style>@page{size:A4;margin:14mm}*{box-sizing:border-box}body{direction:rtl;text-align:right;font-family:Tahoma,Arial,sans-serif;color:#263522;margin:0;font-size:12px;line-height:1.9}header{border-bottom:3px solid #536b3c;padding:0 0 12px;margin-bottom:16px}h1{font-size:22px;margin:0 0 4px;color:#30482a}header p{margin:0;color:#66745c}.summary{display:flex;gap:10px;margin:12px 0 18px}.summary div{flex:1;background:#edf1e7;border:1px solid #d2dcc8;border-radius:9px;padding:9px;text-align:center}.summary b{display:block;font-size:10px;color:#66745c}.summary strong{font-size:14px}.report{border:1px solid #d7dfd0;border-radius:10px;padding:11px 12px;margin:0 0 12px;break-inside:avoid}.report-head{display:flex;align-items:center;gap:9px;border-bottom:1px solid #e0e6da;padding-bottom:7px;margin-bottom:8px}.report-head h2{font-size:14px;margin:0;color:#30482a}.num{background:#30482a;color:#fff;border-radius:6px;padding:0 7px}.project{margin-right:auto;font-weight:bold;color:#596d49}.details{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.details div{background:#f7f8f3;border-radius:6px;padding:6px 8px}.details b,.desc b{display:block;font-size:10px;color:#68775d}.details span{font-weight:bold;direction:rtl}.desc{border-top:1px dashed #d5ddce;margin-top:8px;padding-top:7px}.desc p{white-space:normal;overflow-wrap:anywhere;margin:2px 0}.photo{display:block;max-width:150px;max-height:130px;object-fit:contain;margin:8px 0 0;border-radius:6px}.foot{margin-top:18px;padding-top:8px;border-top:1px solid #d7dfd0;text-align:center;color:#7a8572;font-size:10px}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.report{break-inside:avoid}}@media(max-width:600px){.details{grid-template-columns:repeat(2,1fr)}}</style></head><body><header><h1>گزارش کار روزانه | FGC</h1><p>نام: '+esc(owner||'—')+'　 |　 تاریخ تهیه: '+esc(jalali(todayISO()))+'</p></header><section class="summary"><div><b>تعداد گزارش‌ها</b><strong>'+faNum(rows.length)+'</strong></div><div><b>مجموع ساعت کار</b><strong>'+faNum(Math.round(totalHours*100)/100)+' ساعت</strong></div><div><b>مجموع واریزی‌ها</b><strong>'+faNum(totalMoney)+' تومان</strong></div></section>'+cards+'<div class="foot">FGC • FORWARD TO A BETTER TOMORROW</div><script>window.onload=()=>setTimeout(()=>window.print(),450)<\/script></body></html>';win.document.open();win.document.write(html);win.document.close();$('backupMessage').textContent='صفحه آماده چاپ باز شد؛ در پنجره چاپ گزینه «ذخیره به‌صورت PDF» را انتخاب کن.'}
+init();
+
+</script></body></html>
